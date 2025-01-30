@@ -1,16 +1,40 @@
-## Hi there 👋
+```txt
+  ________        .__    .___ 
+ /  _____/  _____ |  |__ | _/ 
+/   \  ___ /     \|  |  \| |  
+\    \_\  \  Y Y  \   Y  \ |  
+ \______  /__|_|  /___|  /_|  
+        \/      \/     \/      
+```
 
-<!--
-**Skullmc1/Skullmc1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### `>_ whoami`  
+👋 Hey, I'm **Qclid**, a developer who loves building sleek, scalable, and innovative digital experiences.  
+I turn ideas into **interactive, efficient, and well-architected solutions** using modern web technologies.  
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### `>_ stack`  
+🚀 **Tech I wield:**  
+▸ **React** ⚡ **Next.js** ⚡ **TypeScript**  
+▸ **JavaScript** ⚡ **Python** ⚡ **HTML/CSS**  
+
+💡 I specialize in crafting:  
+✔ **Fast & responsive UIs**  
+✔ **Scalable web applications**  
+✔ **Creative solutions to complex problems**  
+
+---
+
+### `>_ what i do`  
+🔹 **Innovate:** Always pushing boundaries with new ideas and approaches.  
+🔹 **Build:** Transforming concepts into well-structured, maintainable code.  
+🔹 **Learn:** Continuously exploring emerging technologies & best practices.  
+
+---
+
+### `>_ connect`  
+📫 **Let's build something awesome.** Open an issue, drop a PR, or just lurk.  
+
+---
+
+This keeps it clean, minimal, and a bit futuristic! Want any tweaks? 🚀
