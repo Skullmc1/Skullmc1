@@ -11,37 +11,27 @@
 ```
 
 ### `>_ whoami`  
-👋 Hey, I'm **Qclid**, a developer who loves building sleek, scalable, and innovative digital experiences.  
-I turn ideas into **interactive, efficient, and well-architected solutions** using modern web technologies.  
-
+👋 Hey, I'm **Qclid**.
 ---
 
 ### `>_ stack`  
-🚀 **Tech I wield:**  
+🚀 **My weapons:**
 ▸ **React** ⚡ **Next.js** ⚡ **TypeScript**  
 ▸ **JavaScript** ⚡ **Python** ⚡ **HTML/CSS**  
 
 💡 I specialize in crafting:  
 ✔ **Fast & responsive UIs**  
-✔ **Scalable web applications**  
+✔ **User friendly Interfaces**  
 ✔ **Creative solutions to complex problems**  
-
----
-
-### `>_ what i do`  
-🔹 **Innovate:** Always pushing boundaries with new ideas and approaches.  
-🔹 **Build:** Transforming concepts into well-structured, maintainable code.  
-🔹 **Learn:** Continuously exploring emerging technologies & best practices.  
 
 ---
 
 ### `>_ connect`  
 📫 **Let's build something awesome.** Open an issue, drop a PR, or just lurk.  
+📜 **Come check out my website.** https://www.qclid.space 
 
 ---
 
 
 
-
-
-The ASCII Art is from https://patorjk.com/software/taag/
+ASCII Art : https://patorjk.com/software/taag/
