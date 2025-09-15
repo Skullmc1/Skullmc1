@@ -1,5 +1,5 @@
 # 💫About Me :
-### `>_ whoami`  [![Awesome](https://awesome.re/badge.svg)]
+### `>_ whoami`  ![Awesome](https://awesome.re/badge.svg)
 👋 Hey, I'm **Qclid**.
 ---
 
