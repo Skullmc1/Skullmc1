@@ -22,7 +22,7 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Generate Visual README
+      - name: Generate Visual Modules
         run: bun generate-grid.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -31,11 +31,11 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md visual-readme.svg
+          git add README.md header.svg activity.svg footer.svg
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: regenerate visual dashboard [skip ci]"
+            git commit -m "docs: refresh visual modules [skip ci]"
             git push
           fi

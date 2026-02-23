@@ -1,0 +1,10 @@
+<svg width="850" height="80" viewBox="0 0 850 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      .text-sub { font: 500 14px 'Segoe UI', system-ui, sans-serif; fill: #8b949e; }
+      .text-highlight { fill: #38bdf8; font-weight: 700; }
+    </style>
+    <rect width="850" height="80" rx="20" fill="#0d1117" />
+    <text x="40" y="45" class="text-sub">
+      Contributions <tspan class="text-highlight">420</tspan> &#8226; Last Sync <tspan class="text-highlight">Feb 23, 2026, 6:58 PM UTC</tspan>
+    </text>
+  </svg>

@@ -1,0 +1,15 @@
+<svg width="850" height="120" viewBox="0 0 850 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+      }
+      .text-main { font: 800 42px 'Segoe UI', system-ui, sans-serif; fill: #ffffff; animation: float 3s ease-in-out infinite; }
+      .text-sub { font: 400 18px 'Segoe UI', system-ui, sans-serif; fill: #8b949e; }
+    </style>
+    <rect width="850" height="120" rx="20" fill="#0d1117" />
+    <g transform="translate(40, 65)">
+      <text x="0" y="0" class="text-main">V_LATE</text>
+      <text x="180" y="-5" class="text-sub">Architecting systems &amp; breaking limits.</text>
+    </g>
+  </svg>

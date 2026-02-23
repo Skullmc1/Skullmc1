@@ -1,6 +1,14 @@
 <div align="center">
 
-<img src="./visual-readme.svg" alt="V_LATE Visual Dashboard" width="850" />
+<img src="./header.svg" width="850" />
 
-<!-- Automated via Bun + GitHub Actions -->
+<br/>
+
+<img src="./activity.svg" width="850" />
+
+<br/>
+
+<img src="./footer.svg" width="850" />
+
+<!-- Visual Architecture by Bun -->
 </div>
