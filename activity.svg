@@ -1,115 +1,65 @@
 <svg width="850" height="220" viewBox="0 0 850 220" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="850" height="220" rx="20" fill="#0d1117" />
     <g transform="translate(40, 40)">
-      <rect x="0" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0s" repeatCount="indefinite" />
-        </rect>
-<rect x="0" y="19" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.05s" repeatCount="indefinite" />
-        </rect>
-<rect x="0" y="38" width="14" height="14" rx="4" fill="#c084fc">
+      <rect x="0" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="0" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="0" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.1s" repeatCount="indefinite" />
         </rect>
-<rect x="0" y="57" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.15000000000000002s" repeatCount="indefinite" />
-        </rect>
-<rect x="0" y="76" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.2s" repeatCount="indefinite" />
-        </rect>
-<rect x="0" y="95" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.25s" repeatCount="indefinite" />
-        </rect>
+<rect x="0" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="0" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="0" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="0" y="114" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.30000000000000004s" repeatCount="indefinite" />
         </rect>
-<rect x="19" y="0" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.05s" repeatCount="indefinite" />
-        </rect>
-<rect x="19" y="19" width="14" height="14" rx="4" fill="#818cf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.1s" repeatCount="indefinite" />
-        </rect>
-<rect x="19" y="38" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.15000000000000002s" repeatCount="indefinite" />
-        </rect>
-<rect x="19" y="57" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.2s" repeatCount="indefinite" />
-        </rect>
-<rect x="19" y="76" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.25s" repeatCount="indefinite" />
-        </rect>
+<rect x="19" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="19" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="19" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="19" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="19" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="19" y="95" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.30000000000000004s" repeatCount="indefinite" />
         </rect>
-<rect x="19" y="114" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.35000000000000003s" repeatCount="indefinite" />
+<rect x="19" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="38" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="38" y="19" width="14" height="14" rx="4" fill="#818cf8">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.15000000000000002s" repeatCount="indefinite" />
         </rect>
-<rect x="38" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.1s" repeatCount="indefinite" />
-        </rect>
-<rect x="38" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="38" y="38" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.2s" repeatCount="indefinite" />
-        </rect>
-<rect x="38" y="57" width="14" height="14" rx="4" fill="#c084fc">
+<rect x="38" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="38" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.25s" repeatCount="indefinite" />
         </rect>
 <rect x="38" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.30000000000000004s" repeatCount="indefinite" />
         </rect>
-<rect x="38" y="95" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.35000000000000003s" repeatCount="indefinite" />
-        </rect>
-<rect x="38" y="114" width="14" height="14" rx="4" fill="#818cf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.4s" repeatCount="indefinite" />
-        </rect>
-<rect x="57" y="0" width="14" height="14" rx="4" fill="#818cf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.15000000000000002s" repeatCount="indefinite" />
-        </rect>
-<rect x="57" y="19" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.2s" repeatCount="indefinite" />
-        </rect>
-<rect x="57" y="38" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.25s" repeatCount="indefinite" />
-        </rect>
-<rect x="57" y="57" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.30000000000000004s" repeatCount="indefinite" />
-        </rect>
-<rect x="57" y="76" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.35000000000000003s" repeatCount="indefinite" />
-        </rect>
+<rect x="38" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="38" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="57" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="57" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="57" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="57" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="57" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="57" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="57" y="114" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.45s" repeatCount="indefinite" />
-        </rect>
-<rect x="76" y="0" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="57" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="76" y="0" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.2s" repeatCount="indefinite" />
         </rect>
-<rect x="76" y="19" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="76" y="19" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.25s" repeatCount="indefinite" />
         </rect>
-<rect x="76" y="38" width="14" height="14" rx="4" fill="#c084fc">
+<rect x="76" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.30000000000000004s" repeatCount="indefinite" />
         </rect>
-<rect x="76" y="57" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.35000000000000003s" repeatCount="indefinite" />
-        </rect>
-<rect x="76" y="76" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.4s" repeatCount="indefinite" />
-        </rect>
-<rect x="76" y="95" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="76" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="76" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="76" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.45s" repeatCount="indefinite" />
         </rect>
-<rect x="76" y="114" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.5s" repeatCount="indefinite" />
-        </rect>
-<rect x="95" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.25s" repeatCount="indefinite" />
-        </rect>
+<rect x="76" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="95" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="95" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="95" y="38" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.35000000000000003s" repeatCount="indefinite" />
-        </rect>
-<rect x="95" y="57" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="95" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="95" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.4s" repeatCount="indefinite" />
         </rect>
 <rect x="95" y="76" width="14" height="14" rx="4" fill="#fb7185">
@@ -118,9 +68,7 @@
 <rect x="95" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.5s" repeatCount="indefinite" />
         </rect>
-<rect x="95" y="114" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.55s" repeatCount="indefinite" />
-        </rect>
+<rect x="95" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="114" y="0" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.30000000000000004s" repeatCount="indefinite" />
         </rect>
@@ -142,36 +90,32 @@
 <rect x="114" y="114" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.6000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="133" y="0" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="133" y="0" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.35000000000000003s" repeatCount="indefinite" />
         </rect>
-<rect x="133" y="19" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="133" y="19" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.4s" repeatCount="indefinite" />
         </rect>
 <rect x="133" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.45s" repeatCount="indefinite" />
         </rect>
-<rect x="133" y="57" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="133" y="57" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.5s" repeatCount="indefinite" />
         </rect>
-<rect x="133" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="133" y="76" width="14" height="14" rx="4" fill="#38bdf8">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.55s" repeatCount="indefinite" />
+        </rect>
 <rect x="133" y="95" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.6000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="133" y="114" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.65s" repeatCount="indefinite" />
-        </rect>
-<rect x="152" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.4s" repeatCount="indefinite" />
-        </rect>
-<rect x="152" y="19" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.45s" repeatCount="indefinite" />
-        </rect>
-<rect x="152" y="38" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.5s" repeatCount="indefinite" />
-        </rect>
+<rect x="133" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="152" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="152" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="152" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="152" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="152" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="152" y="76" width="14" height="14" rx="4" fill="#c084fc">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.6000000000000001s" repeatCount="indefinite" />
+        </rect>
 <rect x="152" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.65s" repeatCount="indefinite" />
         </rect>
@@ -184,85 +128,73 @@
 <rect x="171" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.5s" repeatCount="indefinite" />
         </rect>
-<rect x="171" y="38" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="171" y="38" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.55s" repeatCount="indefinite" />
         </rect>
-<rect x="171" y="57" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="171" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.6000000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="171" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.65s" repeatCount="indefinite" />
         </rect>
-<rect x="171" y="95" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="171" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.7000000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="171" y="114" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.75s" repeatCount="indefinite" />
         </rect>
-<rect x="190" y="0" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="190" y="0" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.5s" repeatCount="indefinite" />
         </rect>
-<rect x="190" y="19" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.55s" repeatCount="indefinite" />
-        </rect>
-<rect x="190" y="38" width="14" height="14" rx="4" fill="#c084fc">
+<rect x="190" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="190" y="38" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.6000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="190" y="57" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.65s" repeatCount="indefinite" />
-        </rect>
+<rect x="190" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="190" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.7000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="190" y="95" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.75s" repeatCount="indefinite" />
+<rect x="190" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="190" y="114" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8s" repeatCount="indefinite" />
         </rect>
-<rect x="190" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="209" y="0" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="209" y="0" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.55s" repeatCount="indefinite" />
         </rect>
 <rect x="209" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="209" y="38" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="209" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.65s" repeatCount="indefinite" />
         </rect>
 <rect x="209" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.7000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="209" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="209" y="95" width="14" height="14" rx="4" fill="#818cf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8s" repeatCount="indefinite" />
+<rect x="209" y="76" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.75s" repeatCount="indefinite" />
         </rect>
-<rect x="209" y="114" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8500000000000001s" repeatCount="indefinite" />
-        </rect>
-<rect x="228" y="0" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="209" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="209" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="228" y="0" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.6000000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="228" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="228" y="38" width="14" height="14" rx="4" fill="#818cf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.7000000000000001s" repeatCount="indefinite" />
+<rect x="228" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="228" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="228" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="228" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="228" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="247" y="0" width="14" height="14" rx="4" fill="#818cf8">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.65s" repeatCount="indefinite" />
         </rect>
-<rect x="228" y="57" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.75s" repeatCount="indefinite" />
-        </rect>
-<rect x="228" y="76" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8s" repeatCount="indefinite" />
-        </rect>
-<rect x="228" y="95" width="14" height="14" rx="4" fill="#818cf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8500000000000001s" repeatCount="indefinite" />
-        </rect>
-<rect x="228" y="114" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9s" repeatCount="indefinite" />
-        </rect>
-<rect x="247" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="247" y="19" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="247" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.7000000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="247" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.75s" repeatCount="indefinite" />
         </rect>
-<rect x="247" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="247" y="76" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="247" y="57" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8s" repeatCount="indefinite" />
+        </rect>
+<rect x="247" y="76" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8500000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="247" y="95" width="14" height="14" rx="4" fill="#fb7185">
@@ -271,26 +203,26 @@
 <rect x="247" y="114" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="266" y="0" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="266" y="0" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.7000000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="266" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.75s" repeatCount="indefinite" />
         </rect>
-<rect x="266" y="38" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="266" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8s" repeatCount="indefinite" />
         </rect>
 <rect x="266" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="266" y="76" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="266" y="76" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9s" repeatCount="indefinite" />
         </rect>
 <rect x="266" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="266" y="114" width="14" height="14" rx="4" fill="#c084fc">
+<rect x="266" y="114" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1s" repeatCount="indefinite" />
         </rect>
-<rect x="285" y="0" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="285" y="0" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.75s" repeatCount="indefinite" />
         </rect>
 <rect x="285" y="19" width="14" height="14" rx="4" fill="#fb7185">
@@ -302,18 +234,22 @@
 <rect x="285" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9s" repeatCount="indefinite" />
         </rect>
-<rect x="285" y="76" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="285" y="76" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="285" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="285" y="114" width="14" height="14" rx="4" fill="#c084fc">
+<rect x="285" y="95" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1s" repeatCount="indefinite" />
+        </rect>
+<rect x="285" y="114" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.05s" repeatCount="indefinite" />
         </rect>
 <rect x="304" y="0" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8s" repeatCount="indefinite" />
         </rect>
-<rect x="304" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="304" y="38" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="304" y="19" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8500000000000001s" repeatCount="indefinite" />
+        </rect>
+<rect x="304" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9s" repeatCount="indefinite" />
         </rect>
 <rect x="304" y="57" width="14" height="14" rx="4" fill="#fb7185">
@@ -322,7 +258,7 @@
 <rect x="304" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1s" repeatCount="indefinite" />
         </rect>
-<rect x="304" y="95" width="14" height="14" rx="4" fill="#c084fc">
+<rect x="304" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.05s" repeatCount="indefinite" />
         </rect>
 <rect x="304" y="114" width="14" height="14" rx="4" fill="#fb7185">
@@ -331,10 +267,10 @@
 <rect x="323" y="0" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.8500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="323" y="19" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="323" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9s" repeatCount="indefinite" />
         </rect>
-<rect x="323" y="38" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="323" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9500000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="323" y="57" width="14" height="14" rx="4" fill="#fb7185">
@@ -343,35 +279,37 @@
 <rect x="323" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.05s" repeatCount="indefinite" />
         </rect>
-<rect x="323" y="95" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="323" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1s" repeatCount="indefinite" />
         </rect>
 <rect x="323" y="114" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="342" y="0" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="342" y="0" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9s" repeatCount="indefinite" />
         </rect>
 <rect x="342" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="342" y="38" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="342" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1s" repeatCount="indefinite" />
         </rect>
 <rect x="342" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.05s" repeatCount="indefinite" />
         </rect>
-<rect x="342" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="342" y="95" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="342" y="76" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1s" repeatCount="indefinite" />
+        </rect>
+<rect x="342" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="342" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="361" y="0" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="342" y="114" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite" />
+        </rect>
+<rect x="361" y="0" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="0.9500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="361" y="19" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1s" repeatCount="indefinite" />
-        </rect>
+<rect x="361" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="361" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.05s" repeatCount="indefinite" />
         </rect>
@@ -381,22 +319,16 @@
 <rect x="361" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="361" y="95" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite" />
-        </rect>
-<rect x="361" y="114" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.25s" repeatCount="indefinite" />
-        </rect>
-<rect x="380" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1s" repeatCount="indefinite" />
-        </rect>
+<rect x="361" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="361" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="380" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="380" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.05s" repeatCount="indefinite" />
         </rect>
-<rect x="380" y="38" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="380" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1s" repeatCount="indefinite" />
         </rect>
-<rect x="380" y="57" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="380" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1500000000000001s" repeatCount="indefinite" />
         </rect>
 <rect x="380" y="76" width="14" height="14" rx="4" fill="#fb7185">
@@ -408,22 +340,18 @@
 <rect x="380" y="114" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.3s" repeatCount="indefinite" />
         </rect>
-<rect x="399" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.05s" repeatCount="indefinite" />
-        </rect>
+<rect x="399" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="399" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1s" repeatCount="indefinite" />
         </rect>
 <rect x="399" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="399" y="57" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="399" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite" />
         </rect>
-<rect x="399" y="76" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.25s" repeatCount="indefinite" />
-        </rect>
-<rect x="399" y="95" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="399" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="399" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.3s" repeatCount="indefinite" />
         </rect>
 <rect x="399" y="114" width="14" height="14" rx="4" fill="#fb7185">
@@ -438,37 +366,25 @@
 <rect x="418" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite" />
         </rect>
-<rect x="418" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="418" y="57" width="14" height="14" rx="4" fill="#fb7185">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.25s" repeatCount="indefinite" />
+        </rect>
 <rect x="418" y="76" width="14" height="14" rx="4" fill="#818cf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.3s" repeatCount="indefinite" />
         </rect>
-<rect x="418" y="95" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.35s" repeatCount="indefinite" />
-        </rect>
-<rect x="418" y="114" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="418" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="418" y="114" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="437" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.1500000000000001s" repeatCount="indefinite" />
-        </rect>
+<rect x="437" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="437" y="19" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite" />
         </rect>
-<rect x="437" y="38" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.25s" repeatCount="indefinite" />
-        </rect>
-<rect x="437" y="57" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.3s" repeatCount="indefinite" />
-        </rect>
-<rect x="437" y="76" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.35s" repeatCount="indefinite" />
-        </rect>
-<rect x="437" y="95" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4000000000000001s" repeatCount="indefinite" />
-        </rect>
-<rect x="437" y="114" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4500000000000002s" repeatCount="indefinite" />
-        </rect>
+<rect x="437" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="437" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="437" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="437" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="437" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="456" y="0" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.2000000000000002s" repeatCount="indefinite" />
         </rect>
@@ -476,32 +392,22 @@
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.25s" repeatCount="indefinite" />
         </rect>
 <rect x="456" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="456" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="456" y="76" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4000000000000001s" repeatCount="indefinite" />
+<rect x="456" y="57" width="14" height="14" rx="4" fill="#38bdf8">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.35s" repeatCount="indefinite" />
         </rect>
-<rect x="456" y="95" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4500000000000002s" repeatCount="indefinite" />
-        </rect>
-<rect x="456" y="114" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite" />
-        </rect>
+<rect x="456" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="456" y="95" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="456" y="114" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="475" y="0" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.25s" repeatCount="indefinite" />
         </rect>
-<rect x="475" y="19" width="14" height="14" rx="4" fill="#c084fc">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.3s" repeatCount="indefinite" />
-        </rect>
-<rect x="475" y="38" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.35s" repeatCount="indefinite" />
-        </rect>
-<rect x="475" y="57" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4000000000000001s" repeatCount="indefinite" />
-        </rect>
+<rect x="475" y="19" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="475" y="38" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="475" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="475" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4500000000000002s" repeatCount="indefinite" />
         </rect>
-<rect x="475" y="95" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="475" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite" />
         </rect>
 <rect x="475" y="114" width="14" height="14" rx="4" fill="#fb7185">
@@ -516,19 +422,19 @@
 <rect x="494" y="38" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="494" y="57" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="494" y="57" width="14" height="14" rx="4" fill="#c084fc">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4500000000000002s" repeatCount="indefinite" />
+        </rect>
 <rect x="494" y="76" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite" />
         </rect>
-<rect x="494" y="95" width="14" height="14" rx="4" fill="#38bdf8">
+<rect x="494" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.55s" repeatCount="indefinite" />
         </rect>
 <rect x="494" y="114" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.6s" repeatCount="indefinite" />
         </rect>
-<rect x="513" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.35s" repeatCount="indefinite" />
-        </rect>
+<rect x="513" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
 <rect x="513" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4000000000000001s" repeatCount="indefinite" />
         </rect>
@@ -550,7 +456,7 @@
 <rect x="532" y="0" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4000000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="532" y="19" width="14" height="14" rx="4" fill="#818cf8">
+<rect x="532" y="19" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4500000000000002s" repeatCount="indefinite" />
         </rect>
 <rect x="532" y="38" width="14" height="14" rx="4" fill="#fb7185">
@@ -559,33 +465,18 @@
 <rect x="532" y="57" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.55s" repeatCount="indefinite" />
         </rect>
-<rect x="532" y="76" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="532" y="76" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.6s" repeatCount="indefinite" />
         </rect>
 <rect x="532" y="95" width="14" height="14" rx="4" fill="#fb7185">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.6500000000000001s" repeatCount="indefinite" />
         </rect>
-<rect x="532" y="114" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="532" y="114" width="14" height="14" rx="4" fill="#38bdf8">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.7000000000000002s" repeatCount="indefinite" />
         </rect>
-<rect x="551" y="0" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.4500000000000002s" repeatCount="indefinite" />
-        </rect>
-<rect x="551" y="19" width="14" height="14" rx="4" fill="#fb7185">
+<rect x="551" y="0" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
+<rect x="551" y="19" width="14" height="14" rx="4" fill="#c084fc">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.5s" repeatCount="indefinite" />
-        </rect>
-<rect x="551" y="38" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.55s" repeatCount="indefinite" />
-        </rect>
-<rect x="551" y="57" width="14" height="14" rx="4" fill="#38bdf8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.6s" repeatCount="indefinite" />
-        </rect>
-<rect x="551" y="76" width="14" height="14" rx="4" fill="#161b22" opacity="0.3" />
-<rect x="551" y="95" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.7000000000000002s" repeatCount="indefinite" />
-        </rect>
-<rect x="551" y="114" width="14" height="14" rx="4" fill="#fb7185">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="1.75s" repeatCount="indefinite" />
         </rect>
 
     </g>
