@@ -10,5 +10,4 @@
 
 <img src="./footer.svg" width="850" />
 
-<!-- Visual Architecture by Bun -->
 </div>
