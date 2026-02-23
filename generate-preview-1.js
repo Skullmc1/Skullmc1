@@ -1,0 +1,65 @@
+const fs = require('fs');
+
+const generateDashboard = () => {
+  const width = 800;
+  const height = 400;
+  
+  const svg = `
+<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .header { font: bold 24px 'Segoe UI', Ubuntu, Sans-Serif; fill: #58a6ff; }
+    .stat { font: 600 16px 'Segoe UI', Ubuntu, Sans-Serif; fill: #c9d1d9; }
+    .label { font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif; fill: #8b949e; }
+    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
+    .card { fill: #161b22; stroke: #30363d; }
+    .bar-bg { fill: #21262d; rx: 4; }
+    .bar-fill { fill: #238636; rx: 4; }
+  </style>
+  
+  <rect width="${width}" height="${height}" rx="10" class="bg" />
+  
+  <text x="30" y="45" class="header">SYSTEM STATUS: V_LATE</text>
+  
+  <!-- Left Column: Stats -->
+  <rect x="30" y="80" width="350" height="280" rx="8" class="card" />
+  <text x="50" y="115" class="stat">GITHUB ACTIVITY</text>
+  
+  <text x="50" y="150" class="label">Commits (24h)</text>
+  <rect x="50" y="160" width="310" height="8" class="bar-bg" />
+  <rect x="50" y="160" width="240" height="8" class="bar-fill" />
+  
+  <text x="50" y="200" class="label">Pull Requests</text>
+  <rect x="50" y="210" width="310" height="8" class="bar-bg" />
+  <rect x="50" y="210" width="180" height="8" class="bar-fill" />
+  
+  <text x="50" y="250" class="label">Issues Resolved</text>
+  <rect x="50" y="260" width="310" height="8" class="bar-bg" />
+  <rect x="50" y="260" width="280" height="8" class="bar-fill" />
+  
+  <!-- Right Column: Tech Stack -->
+  <rect x="410" y="80" width="360" height="280" rx="8" class="card" />
+  <text x="430" y="115" class="stat">CURRENT_VIBE.EXE</text>
+  
+  <g transform="translate(430, 140)">
+    <circle cx="10" cy="10" r="5" fill="#f1e05a" />
+    <text x="25" y="15" class="stat">JavaScript/TypeScript</text>
+    <text x="25" y="35" class="label">Primary runtime: Bun</text>
+    
+    <circle cx="10" cy="70" r="5" fill="#dea584" />
+    <text x="25" y="75" class="stat">Rust / Tauri</text>
+    <text x="25" y="95" class="label">Building native apps</text>
+    
+    <circle cx="10" cy="130" r="5" fill="#00add8" />
+    <text x="25" y="135" class="stat">Go / Cloud</text>
+    <text x="25" y="155" class="label">Scaling backend systems</text>
+  </g>
+  
+  <text x="650" y="340" class="label" font-style="italic">v1.0.4-stable</text>
+</svg>
+  `;
+  
+  fs.writeFileSync('previews/option1-dashboard.svg', svg);
+};
+
+generateDashboard();
+console.log('Generated Option 1 Preview');
