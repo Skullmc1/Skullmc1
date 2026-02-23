@@ -1,11 +1,12 @@
-import { readFileSync, writeFileSync } from "fs";
-
-/**
- * This script updates the "Last Updated" section in README.md
- * with the current UTC timestamp.
- */
+import { readFileSync, writeFileSync, existsSync } from "fs";
 
 const readmePath = "README.md";
+
+if (!existsSync(readmePath)) {
+  console.error("❌ README.md not found!");
+  process.exit(1);
+}
+
 const now = new Date();
 const timestamp = now.toLocaleString("en-US", {
   dateStyle: "full",
@@ -13,31 +14,22 @@ const timestamp = now.toLocaleString("en-US", {
   timeZone: "UTC",
 }) + " UTC";
 
-let content = "";
-try {
-  content = readFileSync(readmePath, "utf-8");
-} catch (e) {
-  console.error("Could not read README.md", e);
-  process.exit(1);
-}
+let content = readFileSync(readmePath, "utf-8");
 
 const startTag = "<!-- LAST_UPDATED_START -->";
 const endTag = "<!-- LAST_UPDATED_END -->";
-const newContent = `${startTag}
-Last Updated: ${timestamp}
-${endTag}`;
+const newContent = `${startTag}\nLast Updated: ${timestamp}\n${endTag}`;
 
 if (content.includes(startTag) && content.includes(endTag)) {
-  const regex = new RegExp(`${startTag}[\s\S]*${endTag}`, "g");
-  content = content.replace(regex, newContent);
+  console.log("🔍 Found tags, replacing content...");
+  // Use a more robust replacement that doesn't rely on complex regex
+  const parts = content.split(startTag);
+  const before = parts[0];
+  const after = parts[1].split(endTag)[1];
+  content = before + newContent + after;
 } else {
-  // If tags don't exist, append to the end of the file
-  content = content.trimEnd() + `
-
----
-
-${newContent}
-`;
+  console.log("⚠️ Tags not found, appending to end of file...");
+  content = content.trimEnd() + `\n\n---\n\n${newContent}\n`;
 }
 
 writeFileSync(readmePath, content);

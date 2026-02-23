@@ -5,29 +5,41 @@ on:
     - cron: '0 */6 * * *' # Every 6 hours
   push:
     branches:
-      - main # Or your default branch name
-  workflow_dispatch: # Allows manual triggering from the Actions tab
+      - main
+  workflow_dispatch: # Allows you to manually click "Run workflow" to test it
 
 jobs:
-  build:
+  update-readme:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Needed to push changes back
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Update README timestamp
+      - name: Run Update Script
         run: bun run update-readme.ts
 
-      - name: Commit and push changes
+      - name: Debug - Show Changes
+        run: |
+          git status
+          tail -n 10 README.md
+
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          # Only commit if there are changes. [skip ci] prevents recursive triggers.
-          git diff --quiet && git diff --staged --quiet || git commit -m "docs: auto-update last updated timestamp [skip ci]"
-          git push
+          
+          # Only commit and push if there are actual changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "docs: auto-update last updated timestamp [skip ci]"
+            git push
+          fi
