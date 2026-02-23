@@ -1,28 +1,28 @@
-<svg width="850" height="160" viewBox="0 0 850 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="850" height="160" rx="12" fill="#000000" stroke="#333" />
-    <text x="40" y="45" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#ffffff" style="letter-spacing: 1px; text-transform: uppercase;">Recent Projects</text>
-    <g transform="translate(40, 65)">
+<svg width="850" height="480" viewBox="0 0 850 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="850" height="480" rx="16" fill="#000000" stroke="#333" />
+    <text x="60" y="60" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#ffffff" style="letter-spacing: 2px; text-transform: uppercase;">Recent Projects</text>
+    <g transform="translate(60, 110)">
       
     <g transform="translate(0, 0)">
-      <rect width="240" height="80" rx="8" fill="#111" stroke="#333" />
-      <text x="15" y="30" font-family="Inter, sans-serif" font-weight="700" font-size="16" fill="#fff">Skullmc1</text>
-      <circle cx="20" cy="55" r="4" fill="#3178c6" />
-      <text x="32" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">TypeScript</text>
-      <text x="150" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">★ 0</text>
+      <rect width="730" height="90" rx="12" fill="#111" stroke="#333" />
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">IF_YOU_SEE_THIS</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">THIS_IS_MOCKDATA_OVERRIDE</text>
+      <circle cx="650" cy="45" r="5" fill="#666" />
+      <text x="665" y="50" font-family="Inter, sans-serif" font-size="14" fill="#888">MOCK</text>
     </g>
-    <g transform="translate(260, 0)">
-      <rect width="240" height="80" rx="8" fill="#111" stroke="#333" />
-      <text x="15" y="30" font-family="Inter, sans-serif" font-weight="700" font-size="16" fill="#fff">baritone</text>
-      <circle cx="20" cy="55" r="4" fill="#b07219" />
-      <text x="32" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">Java</text>
-      <text x="150" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">★ 0</text>
+    <g transform="translate(0, 110)">
+      <rect width="730" height="90" rx="12" fill="#111" stroke="#333" />
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">DATA_PENDING_SYNC</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">CHECK_GITHUB_TOKEN_SECRET</text>
+      <circle cx="650" cy="45" r="5" fill="#666" />
+      <text x="665" y="50" font-family="Inter, sans-serif" font-size="14" fill="#888">MOCK</text>
     </g>
-    <g transform="translate(520, 0)">
-      <rect width="240" height="80" rx="8" fill="#111" stroke="#333" />
-      <text x="15" y="30" font-family="Inter, sans-serif" font-weight="700" font-size="16" fill="#fff">oneclear</text>
-      <circle cx="20" cy="55" r="4" fill="#b07219" />
-      <text x="32" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">Java</text>
-      <text x="150" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">★ 0</text>
+    <g transform="translate(0, 220)">
+      <rect width="730" height="90" rx="12" fill="#111" stroke="#333" />
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">LOCAL_PREVIEW_MODE</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">API_CONNECTION_NOT_ESTABLISHED</text>
+      <circle cx="650" cy="45" r="5" fill="#666" />
+      <text x="665" y="50" font-family="Inter, sans-serif" font-size="14" fill="#888">MOCK</text>
     </g>
     </g>
   </svg>

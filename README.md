@@ -8,6 +8,10 @@
 
 <br/>
 
+<img src="./stack.svg" width="850" />
+
+<br/>
+
 <img src="./repos.svg" width="850" />
 
 </div>
