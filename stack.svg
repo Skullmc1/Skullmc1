@@ -4,27 +4,39 @@
     <g transform="translate(60, 100)">
       
     <g transform="translate(0, 0)">
-      <rect width="110" height="40" rx="20" fill="#111" stroke="#333" />
+      <rect width="110" height="40" rx="20" fill="#111" stroke="#333">
+        <animate attributeName="stroke" values="#333;#555;#333" dur="3s" begin="0s" repeatCount="indefinite" />
+      </rect>
       <text x="55" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#eee">Rust</text>
     </g>
-    <g transform="translate(125, 0)">
-      <rect width="110" height="40" rx="20" fill="#111" stroke="#333" />
+    <g transform="translate(120, 0)">
+      <rect width="110" height="40" rx="20" fill="#111" stroke="#333">
+        <animate attributeName="stroke" values="#333;#555;#333" dur="3s" begin="0.2s" repeatCount="indefinite" />
+      </rect>
       <text x="55" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#eee">Bun</text>
     </g>
-    <g transform="translate(250, 0)">
-      <rect width="110" height="40" rx="20" fill="#111" stroke="#333" />
+    <g transform="translate(240, 0)">
+      <rect width="110" height="40" rx="20" fill="#111" stroke="#333">
+        <animate attributeName="stroke" values="#333;#555;#333" dur="3s" begin="0.4s" repeatCount="indefinite" />
+      </rect>
       <text x="55" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#eee">Tauri</text>
     </g>
-    <g transform="translate(375, 0)">
-      <rect width="110" height="40" rx="20" fill="#111" stroke="#333" />
+    <g transform="translate(360, 0)">
+      <rect width="110" height="40" rx="20" fill="#111" stroke="#333">
+        <animate attributeName="stroke" values="#333;#555;#333" dur="3s" begin="0.6000000000000001s" repeatCount="indefinite" />
+      </rect>
       <text x="55" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#eee">Go</text>
     </g>
-    <g transform="translate(500, 0)">
-      <rect width="110" height="40" rx="20" fill="#111" stroke="#333" />
+    <g transform="translate(480, 0)">
+      <rect width="110" height="40" rx="20" fill="#111" stroke="#333">
+        <animate attributeName="stroke" values="#333;#555;#333" dur="3s" begin="0.8s" repeatCount="indefinite" />
+      </rect>
       <text x="55" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#eee">TypeScript</text>
     </g>
-    <g transform="translate(625, 0)">
-      <rect width="110" height="40" rx="20" fill="#111" stroke="#333" />
+    <g transform="translate(600, 0)">
+      <rect width="110" height="40" rx="20" fill="#111" stroke="#333">
+        <animate attributeName="stroke" values="#333;#555;#333" dur="3s" begin="1s" repeatCount="indefinite" />
+      </rect>
       <text x="55" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#eee">Next.js</text>
     </g>
     </g>

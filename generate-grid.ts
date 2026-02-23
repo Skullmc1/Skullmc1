@@ -95,11 +95,11 @@ function generateHeader() {
 function generateActivity(calendar) {
   const width = 850;
   const height = 400;
-  const cellSize = 18;
+  const cellSize = 16; // Reduced to prevent clipping
   const gap = 4;
   
   let gridItems = "";
-  const weeks = calendar.weeks.slice(-36);
+  const weeks = calendar.weeks.slice(-35); // Optimized week count
 
   weeks.forEach((week, x) => {
     week.contributionDays.forEach((day, y) => {
@@ -119,7 +119,7 @@ function generateActivity(calendar) {
     <g transform="translate(60, 110)">
       ${gridItems}
     </g>
-    <text x="${width - 60}" y="${height - 40}" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#666">${calendar.totalContributions} total contributions in the last cycle</text>
+    <text x="${width - 60}" y="${height - 40}" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#666">${calendar.totalContributions} total contributions</text>
   </svg>`;
   writeFileSync("activity.svg", svg);
 }
@@ -131,9 +131,12 @@ function generateStack() {
   
   let techItems = "";
   techs.forEach((tech, i) => {
+    const delay = i * 0.2;
     techItems += `
-    <g transform="translate(${i * 125}, 0)">
-      <rect width="110" height="40" rx="20" fill="#111" stroke="#333" />
+    <g transform="translate(${i * 120}, 0)">
+      <rect width="110" height="40" rx="20" fill="#111" stroke="#333">
+        <animate attributeName="stroke" values="#333;#555;#333" dur="3s" begin="${delay}s" repeatCount="indefinite" />
+      </rect>
       <text x="55" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="500" font-size="14" fill="#eee">${tech}</text>
     </g>`;
   });
@@ -154,13 +157,18 @@ function generateRepoCard(repos) {
   
   let repoItems = "";
   repos.slice(0, 3).forEach((repo, i) => {
+    const delay = i * 0.5;
     repoItems += `
     <g transform="translate(0, ${i * 110})">
-      <rect width="730" height="90" rx="12" fill="#111" stroke="#333" />
+      <rect width="730" height="90" rx="12" fill="#111" stroke="#333">
+        <animate attributeName="stroke-opacity" values="1;0.5;1" dur="4s" begin="${delay}s" repeatCount="indefinite" />
+      </rect>
       <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">${repo.name}</text>
       <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">${repo.description || "No description provided"}</text>
-      <circle cx="650" cy="45" r="5" fill="${repo.primaryLanguage?.color || '#fff'}" />
-      <text x="665" y="50" font-family="Inter, sans-serif" font-size="14" fill="#888">${repo.primaryLanguage?.name || 'Unknown'}</text>
+      <g transform="translate(580, 45)">
+        <circle cx="0" cy="0" r="5" fill="${repo.primaryLanguage?.color || '#fff'}" />
+        <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">${repo.primaryLanguage?.name || 'Unknown'}</text>
+      </g>
     </g>`;
   });
 
