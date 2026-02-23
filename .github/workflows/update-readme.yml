@@ -1,15 +1,15 @@
-name: Update README
+name: Update README Visuals
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # Every 6 hours
+    - cron: '0 */6 * * *' # Every 6 hours
   push:
     branches:
       - main
-  workflow_dispatch: # Allows you to manually click "Run workflow" to test it
+  workflow_dispatch:
 
 jobs:
-  update-readme:
+  update-visuals:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,24 +22,21 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Run Update Script
-        run: bun run update-readme.ts
+      - name: Generate Pixel Grid
+        run: bun run generate-grid.ts
 
-      - name: Debug - Show Changes
-        run: |
-          git status
-          tail -n 10 README.md
+      - name: Update README Timestamp
+        run: bun run update-readme.ts
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
-
-          # Only commit and push if there are actual changes
+          git add README.md activity-grid.svg
+          
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: auto-update last updated timestamp [skip ci]"
+            git commit -m "docs: refresh activity grid and timestamp [skip ci]"
             git push
           fi
