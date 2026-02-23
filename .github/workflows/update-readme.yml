@@ -1,8 +1,8 @@
-name: Update README Visuals
+name: Update Visual README
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Every 6 hours
+    - cron: '0 */6 * * *'
   push:
     branches:
       - main
@@ -22,21 +22,20 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Generate Pixel Grid
-        run: bun run generate-grid.ts
-
-      - name: Update README Timestamp
-        run: bun run update-readme.ts
+      - name: Generate Visual README
+        run: bun generate-grid.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md activity-grid.svg
+          git add README.md visual-readme.svg
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "docs: refresh activity grid and timestamp [skip ci]"
+            git commit -m "docs: regenerate visual dashboard [skip ci]"
             git push
           fi
