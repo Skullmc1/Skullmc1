@@ -1,15 +1,25 @@
-<svg width="850" height="120" viewBox="0 0 850 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="850" height="180" viewBox="0 0 850 180" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
+      @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .name { font: 800 64px 'Inter', system-ui, sans-serif; fill: #ffffff; letter-spacing: -3px; }
+      .bio { font: 400 20px 'Inter', system-ui, sans-serif; fill: #a1a1a1; letter-spacing: -0.5px; }
+      .shimmer {
+        fill: url(#shimmerGradient);
+        animation: slide 3s infinite linear;
       }
-      .text-main { font: 800 42px 'Segoe UI', system-ui, sans-serif; fill: #ffffff; animation: float 3s ease-in-out infinite; }
-      .text-sub { font: 400 18px 'Segoe UI', system-ui, sans-serif; fill: #8b949e; }
+      @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
     </style>
-    <rect width="850" height="120" rx="20" fill="#0d1117" />
-    <g transform="translate(40, 65)">
-      <text x="0" y="0" class="text-main">V_LATE</text>
-      <text x="180" y="-5" class="text-sub">Architecting systems &amp; breaking limits.</text>
+    <defs>
+      <linearGradient id="shimmerGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="transparent" />
+        <stop offset="0.5" stop-color="white" stop-opacity="0.05" />
+        <stop offset="1" stop-color="transparent" />
+      </linearGradient>
+    </defs>
+    <rect width="850" height="180" rx="12" fill="#000000" stroke="#333" />
+    <rect width="850" height="180" rx="12" class="shimmer" />
+    <g transform="translate(50, 90)">
+      <text x="0" y="0" class="name">Qclid</text>
+      <text x="0" y="40" class="bio">Engineering high-performance ecosystems.</text>
     </g>
   </svg>

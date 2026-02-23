@@ -8,6 +8,6 @@
 
 <br/>
 
-<img src="./footer.svg" width="850" />
+<img src="./repos.svg" width="850" />
 
 </div>

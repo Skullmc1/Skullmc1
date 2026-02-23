@@ -1,8 +1,8 @@
 import { writeFileSync } from "fs";
 
 /**
- * THE PIXEL OVERHAUL - V_LATE EDITION
- * Modular Visual System
+ * QCLID VISUAL ARCHITECTURE - VERCEL INSPIRED
+ * High-contrast, minimalist, modular cards with refined animations.
  */
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -23,27 +23,30 @@ async function getContributions() {
             }
           }
         }
+        repositories(first: 10, orderBy: {field: PUSHED_AT, direction: DESC}) {
+          nodes {
+            name
+            primaryLanguage { name color }
+            stargazerCount
+          }
+        }
       }
     }
   `;
 
-  if (!GITHUB_TOKEN) {
-    console.warn("⚠️ No GITHUB_TOKEN found. Using mock data.");
-    return generateMockData();
-  }
+  if (!GITHUB_TOKEN) return generateMockData();
 
   try {
     const response = await fetch("https://api.github.com/graphql", {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
-      },
+      headers: { Authorization: `Bearer ${GITHUB_TOKEN}`, "Content-Type": "application/json" },
       body: JSON.stringify({ query, variables: { userName: USERNAME } }),
     });
-
     const data = await response.json();
-    return data.data.user.contributionsCollection.contributionCalendar;
+    return {
+      calendar: data.data.user.contributionsCollection.contributionCalendar,
+      repos: data.data.user.repositories.nodes
+    };
   } catch (e) {
     return generateMockData();
   }
@@ -51,97 +54,117 @@ async function getContributions() {
 
 function generateMockData() {
   return {
-    totalContributions: 420,
-    weeks: Array.from({ length: 52 }, (_, i) => ({
-      contributionDays: Array.from({ length: 7 }, (_, j) => ({
-        contributionCount: Math.floor(Math.random() * 10),
-        date: `2024-01-01`,
-      })),
-    })),
+    calendar: {
+      totalContributions: 1337,
+      weeks: Array.from({ length: 52 }, () => ({
+        contributionDays: Array.from({ length: 7 }, () => ({ contributionCount: Math.floor(Math.random() * 5) }))
+      }))
+    },
+    repos: [
+      { name: "hyper-engine", primaryLanguage: { name: "Rust", color: "#dea584" }, stargazerCount: 42 },
+      { name: "quantum-ui", primaryLanguage: { name: "TypeScript", color: "#3178c6" }, stargazerCount: 12 },
+      { name: "nebula-core", primaryLanguage: { name: "Go", color: "#00add8" }, stargazerCount: 8 }
+    ]
   };
 }
 
 function generateHeader() {
   const width = 850;
-  const height = 120;
+  const height = 180;
   const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     <style>
-      @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
+      @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .name { font: 800 64px 'Inter', system-ui, sans-serif; fill: #ffffff; letter-spacing: -3px; }
+      .bio { font: 400 20px 'Inter', system-ui, sans-serif; fill: #a1a1a1; letter-spacing: -0.5px; }
+      .shimmer {
+        fill: url(#shimmerGradient);
+        animation: slide 3s infinite linear;
       }
-      .text-main { font: 800 42px 'Segoe UI', system-ui, sans-serif; fill: #ffffff; animation: float 3s ease-in-out infinite; }
-      .text-sub { font: 400 18px 'Segoe UI', system-ui, sans-serif; fill: #8b949e; }
+      @keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
     </style>
-    <rect width="${width}" height="${height}" rx="20" fill="#0d1117" />
-    <g transform="translate(40, 65)">
-      <text x="0" y="0" class="text-main">V_LATE</text>
-      <text x="180" y="-5" class="text-sub">Architecting systems &amp; breaking limits.</text>
+    <defs>
+      <linearGradient id="shimmerGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="transparent" />
+        <stop offset="0.5" stop-color="white" stop-opacity="0.05" />
+        <stop offset="1" stop-color="transparent" />
+      </linearGradient>
+    </defs>
+    <rect width="${width}" height="${height}" rx="12" fill="#000000" stroke="#333" />
+    <rect width="${width}" height="${height}" rx="12" class="shimmer" />
+    <g transform="translate(50, 90)">
+      <text x="0" y="0" class="name">Qclid</text>
+      <text x="0" y="40" class="bio">Engineering high-performance ecosystems.</text>
     </g>
   </svg>`;
   writeFileSync("header.svg", svg);
 }
 
-function generateGrid(calendar) {
+function generateActivity(calendar) {
   const width = 850;
-  const height = 220;
-  const cellSize = 14;
-  const gap = 5;
-  const colors = ["#161b22", "#38bdf8", "#818cf8", "#c084fc", "#fb7185"];
+  const height = 280;
+  const cellSize = 16;
+  const gap = 4;
   
   let gridItems = "";
-  const weeks = calendar.weeks.slice(-30);
+  const weeks = calendar.weeks.slice(-34);
 
   weeks.forEach((week, x) => {
     week.contributionDays.forEach((day, y) => {
       const count = day.contributionCount;
-      if (count > 0) {
-        const fill = colors[Math.min(count, colors.length - 1)];
-        const delay = (x + y) * 0.05;
-        gridItems += `<rect x="${x * (cellSize + gap)}" y="${y * (cellSize + gap)}" width="${cellSize}" height="${cellSize}" rx="4" fill="${fill}">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" begin="${delay}s" repeatCount="indefinite" />
-        </rect>\n`;
-      } else {
-        gridItems += `<rect x="${x * (cellSize + gap)}" y="${y * (cellSize + gap)}" width="${cellSize}" height="${cellSize}" rx="4" fill="${colors[0]}" opacity="0.3" />\n`;
-      }
+      const opacity = count === 0 ? 0.05 : 0.2 + (count * 0.2);
+      const color = count === 0 ? "#ffffff" : "#ffffff";
+      const delay = (x + y) * 0.02;
+      
+      gridItems += `<rect x="${x * (cellSize + gap)}" y="${y * (cellSize + gap)}" width="${cellSize}" height="${cellSize}" rx="2" fill="${color}" fill-opacity="${opacity}">
+        <animate attributeName="fill-opacity" values="${opacity};${Math.min(opacity + 0.3, 1)};${opacity}" dur="4s" begin="${delay}s" repeatCount="indefinite" />
+      </rect>\n`;
     });
   });
 
   const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="${width}" height="${height}" rx="20" fill="#0d1117" />
-    <g transform="translate(40, 40)">
+    <rect width="${width}" height="${height}" rx="12" fill="#000000" stroke="#333" />
+    <text x="40" y="45" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#ffffff" style="letter-spacing: 1px; text-transform: uppercase;">Activity</text>
+    <g transform="translate(40, 75)">
       ${gridItems}
     </g>
+    <text x="${width - 40}" y="${height - 30}" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#666">${calendar.totalContributions} total contributions</text>
   </svg>`;
   writeFileSync("activity.svg", svg);
 }
 
-function generateFooter(calendar) {
+function generateRepoCard(repos) {
   const width = 850;
-  const height = 80;
-  const now = new Date();
-  const timestamp = now.toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }) + " UTC";
+  const height = 160;
+  
+  let repoItems = "";
+  repos.slice(0, 3).forEach((repo, i) => {
+    repoItems += `
+    <g transform="translate(${i * 260}, 0)">
+      <rect width="240" height="80" rx="8" fill="#111" stroke="#333" />
+      <text x="15" y="30" font-family="Inter, sans-serif" font-weight="700" font-size="16" fill="#fff">${repo.name}</text>
+      <circle cx="20" cy="55" r="4" fill="${repo.primaryLanguage?.color || '#fff'}" />
+      <text x="32" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">${repo.primaryLanguage?.name || 'Unknown'}</text>
+      <text x="150" y="59" font-family="Inter, sans-serif" font-size="12" fill="#888">★ ${repo.stargazerCount}</text>
+    </g>`;
+  });
 
   const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <style>
-      .text-sub { font: 500 14px 'Segoe UI', system-ui, sans-serif; fill: #8b949e; }
-      .text-highlight { fill: #38bdf8; font-weight: 700; }
-    </style>
-    <rect width="${width}" height="${height}" rx="20" fill="#0d1117" />
-    <text x="40" y="45" class="text-sub">
-      Contributions <tspan class="text-highlight">${calendar.totalContributions}</tspan> &#8226; Last Sync <tspan class="text-highlight">${timestamp}</tspan>
-    </text>
+    <rect width="${width}" height="${height}" rx="12" fill="#000000" stroke="#333" />
+    <text x="40" y="45" font-family="Inter, sans-serif" font-weight="600" font-size="14" fill="#ffffff" style="letter-spacing: 1px; text-transform: uppercase;">Recent Projects</text>
+    <g transform="translate(40, 65)">
+      ${repoItems}
+    </g>
   </svg>`;
-  writeFileSync("footer.svg", svg);
+  writeFileSync("repos.svg", svg);
 }
 
 async function run() {
-  console.log("🚀 Generating Modular Visuals...");
-  const calendar = await getContributions();
+  console.log("🚀 Building Qclid Visual Engine...");
+  const data = await getContributions();
   generateHeader();
-  generateGrid(calendar);
-  generateFooter(calendar);
-  console.log("✅ Modules Ready!");
+  generateActivity(data.calendar);
+  generateRepoCard(data.repos);
+  console.log("✅ Vercel-style modules deployed!");
 }
 
 run();
