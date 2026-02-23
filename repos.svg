@@ -7,33 +7,33 @@
       <rect width="730" height="90" rx="12" fill="#111" stroke="#333">
         <animate attributeName="stroke-opacity" values="1;0.5;1" dur="4s" begin="0s" repeatCount="indefinite" />
       </rect>
-      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">IF_YOU_SEE_THIS</text>
-      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">THIS_IS_MOCKDATA_OVERRIDE</text>
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">Skullmc1</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">About me thingy</text>
       <g transform="translate(580, 45)">
-        <circle cx="0" cy="0" r="5" fill="#666" />
-        <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">MOCK</text>
+        <circle cx="0" cy="0" r="5" fill="#3178c6" />
+        <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">TypeScript</text>
       </g>
     </g>
     <g transform="translate(0, 110)">
       <rect width="730" height="90" rx="12" fill="#111" stroke="#333">
         <animate attributeName="stroke-opacity" values="1;0.5;1" dur="4s" begin="0.5s" repeatCount="indefinite" />
       </rect>
-      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">DATA_PENDING_SYNC</text>
-      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">CHECK_GITHUB_TOKEN_SECRET</text>
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">baritone</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">google maps for block game</text>
       <g transform="translate(580, 45)">
-        <circle cx="0" cy="0" r="5" fill="#666" />
-        <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">MOCK</text>
+        <circle cx="0" cy="0" r="5" fill="#b07219" />
+        <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">Java</text>
       </g>
     </g>
     <g transform="translate(0, 220)">
       <rect width="730" height="90" rx="12" fill="#111" stroke="#333">
         <animate attributeName="stroke-opacity" values="1;0.5;1" dur="4s" begin="1s" repeatCount="indefinite" />
       </rect>
-      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">LOCAL_PREVIEW_MODE</text>
-      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">API_CONNECTION_NOT_ESTABLISHED</text>
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">oneclear</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">No description provided</text>
       <g transform="translate(580, 45)">
-        <circle cx="0" cy="0" r="5" fill="#666" />
-        <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">MOCK</text>
+        <circle cx="0" cy="0" r="5" fill="#b07219" />
+        <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">Java</text>
       </g>
     </g>
     </g>
