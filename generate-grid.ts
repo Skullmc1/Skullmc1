@@ -7,7 +7,7 @@ import { writeFileSync } from "fs";
  */
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const USERNAME = "Skullmc1"; // We can detect this or hardcode it for now
+const USERNAME = "Skullmc1";
 
 async function getContributions() {
   const query = `
@@ -44,6 +44,10 @@ async function getContributions() {
     });
 
     const data = await response.json();
+    if (data.errors) {
+      console.error("GraphQL Errors:", data.errors);
+      return generateMockData();
+    }
     return data.data.user.contributionsCollection.contributionCalendar;
   } catch (e) {
     console.error("Error fetching GitHub data:", e);
@@ -73,7 +77,7 @@ function generatePixelREADME(calendar) {
   const colors = ["#161b22", "#38bdf8", "#818cf8", "#c084fc", "#fb7185"];
   
   let gridItems = "";
-  const weeks = calendar.weeks.slice(-30); // Last 30 weeks for a cleaner look
+  const weeks = calendar.weeks.slice(-30);
 
   weeks.forEach((week, x) => {
     week.contributionDays.forEach((day, y) => {
@@ -86,15 +90,7 @@ function generatePixelREADME(calendar) {
         opacity = 0.5 + (count / 10) * 0.5;
       }
 
-      gridItems += `<rect 
-        x="${x * (cellSize + gap)}" 
-        y="${y * (cellSize + gap)}" 
-        width="${cellSize}" 
-        height="${cellSize}" 
-        rx="3" 
-        fill="${fill}" 
-        fill-opacity="${opacity}"
-      />\n`;
+      gridItems += `<rect x="${x * (cellSize + gap)}" y="${y * (cellSize + gap)}" width="${cellSize}" height="${cellSize}" rx="3" fill="${fill}" fill-opacity="${opacity}" />\n`;
     });
   });
 
@@ -105,20 +101,19 @@ function generatePixelREADME(calendar) {
     timeZone: "UTC",
   }) + " UTC";
 
-  const svg = `
-<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+  // Use XML-safe entities: & -> &amp; and • -> &bull;
+  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .text-main { font: 800 32px 'Segoe UI', system-ui, sans-serif; fill: #fff; }
+    .text-main { font: 800 32px 'Segoe UI', system-ui, sans-serif; fill: #ffffff; }
     .text-sub { font: 400 16px 'Segoe UI', system-ui, sans-serif; fill: #8b949e; }
     .text-label { font: 600 12px 'Segoe UI', system-ui, sans-serif; fill: #58a6ff; text-transform: uppercase; letter-spacing: 1px; }
   </style>
 
   <rect width="${width}" height="${height}" rx="20" fill="#0d1117" />
   
-  <!-- HEADER SECTION -->
   <g transform="translate(40, 50)">
     <text x="0" y="0" class="text-main">V_LATE</text>
-    <text x="0" y="30" class="text-sub">Architecting systems & breaking limits.</text>
+    <text x="0" y="30" class="text-sub">Architecting systems &amp; breaking limits.</text>
     
     <g transform="translate(0, 70)">
        <rect width="80" height="24" rx="12" fill="#38bdf8" fill-opacity="0.1" stroke="#38bdf8" stroke-opacity="0.2" />
@@ -132,7 +127,6 @@ function generatePixelREADME(calendar) {
     </g>
   </g>
 
-  <!-- ACTIVITY STREAM SECTION -->
   <g transform="translate(40, 200)">
     <text x="0" y="-20" class="text-label">Live Activity Stream</text>
     <g transform="translate(0, 0)">
@@ -140,11 +134,10 @@ function generatePixelREADME(calendar) {
     </g>
     
     <text x="0" y="130" class="text-sub" style="font-size: 12px;">
-      Total Contributions: ${calendar.totalContributions} • Refreshed: ${timestamp}
+      Total Contributions: ${calendar.totalContributions} &#8226; Refreshed: ${timestamp}
     </text>
   </g>
 
-  <!-- DECORATIVE PIXELS -->
   <g transform="translate(${width - 200}, 50)">
      <rect width="20" height="20" rx="4" fill="#fb7185" opacity="0.6" />
      <rect x="30" y="30" width="40" height="40" rx="8" fill="#38bdf8" opacity="0.3" />
@@ -154,8 +147,7 @@ function generatePixelREADME(calendar) {
   <text x="${width - 40}" y="${height - 30}" text-anchor="end" class="text-sub" style="font-size: 10px; opacity: 0.5;">
     GENERATED_BY_BUN_CORE_V1
   </text>
-</svg>
-  `;
+</svg>`;
 
   writeFileSync("visual-readme.svg", svg);
 }
