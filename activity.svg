@@ -725,6 +725,9 @@
 <rect x="680" y="40" width="16" height="16" rx="3" fill="#fff" fill-opacity="5.3500000000000005">
         <animate attributeName="fill-opacity" values="5.3500000000000005;1;5.3500000000000005" dur="5s" begin="0.72s" repeatCount="indefinite" />
       </rect>
+<rect x="680" y="60" width="16" height="16" rx="3" fill="#fff" fill-opacity="0.05">
+        <animate attributeName="fill-opacity" values="0.05;0.45;0.05" dur="5s" begin="0.74s" repeatCount="indefinite" />
+      </rect>
 
     </g>
     <text x="790" y="360" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#666">1614 total contributions</text>
