@@ -728,10 +728,10 @@
 <rect x="680" y="60" width="16" height="16" rx="3" fill="#fff" fill-opacity="2.15">
         <animate attributeName="fill-opacity" values="2.15;1;2.15" dur="5s" begin="0.74s" repeatCount="indefinite" />
       </rect>
-<rect x="680" y="80" width="16" height="16" rx="3" fill="#fff" fill-opacity="0.05">
-        <animate attributeName="fill-opacity" values="0.05;0.45;0.05" dur="5s" begin="0.76s" repeatCount="indefinite" />
+<rect x="680" y="80" width="16" height="16" rx="3" fill="#fff" fill-opacity="0.35">
+        <animate attributeName="fill-opacity" values="0.35;0.75;0.35" dur="5s" begin="0.76s" repeatCount="indefinite" />
       </rect>
 
     </g>
-    <text x="790" y="360" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#666">1624 total contributions</text>
+    <text x="790" y="360" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#666">1625 total contributions</text>
   </svg>
