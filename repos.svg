@@ -7,8 +7,8 @@
       <rect width="730" height="90" rx="12" fill="#111" stroke="#333">
         <animate attributeName="stroke-opacity" values="1;0.5;1" dur="4s" begin="0s" repeatCount="indefinite" />
       </rect>
-      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">altus-ui</text>
-      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">Multi Themed UI component library. Built for performance with minimal JS.</text>
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">Skullmc1</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">About me thingy</text>
       <g transform="translate(580, 45)">
         <circle cx="0" cy="0" r="5" fill="#3178c6" />
         <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">TypeScript</text>
@@ -18,8 +18,8 @@
       <rect width="730" height="90" rx="12" fill="#111" stroke="#333">
         <animate attributeName="stroke-opacity" values="1;0.5;1" dur="4s" begin="0.5s" repeatCount="indefinite" />
       </rect>
-      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">Skullmc1</text>
-      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">About me thingy</text>
+      <text x="25" y="35" font-family="Inter, sans-serif" font-weight="700" font-size="20" fill="#fff">altus-ui</text>
+      <text x="25" y="65" font-family="Inter, sans-serif" font-size="14" fill="#666">Multi Themed UI component library. Built for performance with minimal JS.</text>
       <g transform="translate(580, 45)">
         <circle cx="0" cy="0" r="5" fill="#3178c6" />
         <text x="12" y="5" font-family="Inter, sans-serif" font-size="14" fill="#888">TypeScript</text>
