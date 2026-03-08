@@ -207,7 +207,7 @@ function generateLearning() {
   const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
     ${commonDefs}
     <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
-    <text x="40" y="45" class="title">Currently Learning & Building ⚡</text>
+    <text x="40" y="45" class="title">Currently Learning &amp; Building ⚡</text>
     <g transform="translate(0, 70)">
       ${itemsHtml}
     </g>

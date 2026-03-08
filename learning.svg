@@ -24,7 +24,7 @@
   </defs>
 
     <rect width="850" height="140" rx="20" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5" />
-    <text x="40" y="45" class="title">Currently Learning & Building ⚡</text>
+    <text x="40" y="45" class="title">Currently Learning &amp; Building ⚡</text>
     <g transform="translate(0, 70)">
       
       <g transform="translate(40, 0)">
