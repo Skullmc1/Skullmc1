@@ -41,6 +41,7 @@ interface UserData {
   calendar: ContributionCalendar;
   repos: Repository[];
   stats: Stats;
+  isMock: boolean;
 }
 
 async function getContributions(): Promise<UserData> {
@@ -73,7 +74,10 @@ async function getContributions(): Promise<UserData> {
     }
   `;
 
-  if (!GITHUB_TOKEN) return generateMockData();
+  if (!GITHUB_TOKEN) {
+    console.warn("No GITHUB_TOKEN found, using mock data.");
+    return generateMockData();
+  }
 
   try {
     const response = await fetch("https://api.github.com/graphql", {
@@ -85,7 +89,10 @@ async function getContributions(): Promise<UserData> {
       body: JSON.stringify({ query, variables: { userName: USERNAME } }),
     });
     const data = await response.json();
-    if (data.errors) return generateMockData();
+    if (data.errors) {
+      console.error("GitHub API errors:", JSON.stringify(data.errors, null, 2));
+      return generateMockData();
+    }
 
     const user = data.data.user;
     const repos: Repository[] = user.repositories.nodes;
@@ -105,8 +112,10 @@ async function getContributions(): Promise<UserData> {
         totalPRs: user.pullRequests.totalCount,
         totalIssues: user.issues.totalCount,
       },
+      isMock: false,
     };
   } catch (e) {
+    console.error("Error fetching data from GitHub:", e);
     return generateMockData();
   }
 }
@@ -155,6 +164,7 @@ function generateMockData(): UserData {
       totalPRs: 99,
       totalIssues: 99,
     },
+    isMock: true,
   };
 }
 
@@ -414,12 +424,21 @@ function generateRepoCard(repos: Repository[]) {
 
 async function run() {
   const data = await getContributions();
-  generateHeader();
-  generateStats(data.stats);
-  generateLearning();
-  generateActivity(data.calendar);
-  generateRepoCard(data.repos);
-  console.log("Successfully generated all SVGs.");
+  const updatedFiles: string[] = [];
+
+  const generateAndTrack = (fn: Function, fileName: string, ...args: any[]) => {
+    fn(...args);
+    updatedFiles.push(fileName);
+  };
+
+  generateAndTrack(generateHeader, "header.svg");
+  generateAndTrack(generateStats, "stats.svg", data.stats);
+  generateAndTrack(generateLearning, "learning.svg");
+  generateAndTrack(generateActivity, "activity.svg", data.calendar);
+  generateAndTrack(generateRepoCard, "repos.svg", data.repos);
+
+  console.log(`Updated SVGs: ${updatedFiles.join(", ")}`);
+  console.log(`Data source: ${data.isMock ? "Fallback (Mock Data)" : "Real Key (GitHub API)"}`);
 }
 
 run();
