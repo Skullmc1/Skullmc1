@@ -1,7 +1,7 @@
 import { UserData, Repository, Stats } from "./types";
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-const USERNAME = "Qclid";
+const USERNAME = "Skullmc1";
 
 export async function getContributions(): Promise<UserData> {
   const query = `
@@ -39,6 +39,8 @@ export async function getContributions(): Promise<UserData> {
     return generateMockData();
   }
 
+  console.log(`🔍 Fetching data for user: ${USERNAME}...`);
+
   try {
     const response = await fetch("https://api.github.com/graphql", {
       method: "POST",
@@ -61,16 +63,19 @@ export async function getContributions(): Promise<UserData> {
     }
 
     if (!data.data || !data.data.user) {
-      console.error("❌ Invalid data structure returned from GitHub.");
+      console.error("❌ Invalid data structure returned from GitHub. Check if the username exists.");
       return generateMockData();
     }
 
     const user = data.data.user;
     const repos: Repository[] = user.repositories.nodes;
+    console.log(`✅ Found ${repos.length} repositories.`);
+    
     const totalStars = repos.reduce(
       (acc: number, repo: Repository) => acc + repo.stargazerCount,
       0,
     );
+    console.log(`⭐ Total stars: ${totalStars}`);
 
     return {
       calendar: user.contributionsCollection.contributionCalendar,
