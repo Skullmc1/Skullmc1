@@ -24,7 +24,7 @@
   </defs>
 
     <rect width="850" height="200" rx="20" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5" />
-    
+
     <!-- Decorative background elements -->
     <circle cx="750" cy="50" r="100" fill="url(#grad1)" opacity="0.15" filter="blur(40px)" />
     <circle cx="800" cy="180" r="120" fill="url(#grad2)" opacity="0.15" filter="blur(40px)" />
