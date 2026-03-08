@@ -18,4 +18,8 @@
 
 <img src="https://raw.githubusercontent.com/Skullmc1/Skullmc1/main/repos.svg" width="850" alt="Top Projects" />
 
+<br/>
+
+<img src="https://raw.githubusercontent.com/Skullmc1/Skullmc1/main/stack.svg" width="850" alt="Tech Stack" />
+
 </div>
