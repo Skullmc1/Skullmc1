@@ -28,28 +28,28 @@
       <g transform="translate(40, 40)" filter="url(#shadow)">
         <rect width="180" height="90" rx="16" fill="#313244" stroke="#45475a" stroke-width="1" />
         <rect width="180" height="4" rx="2" fill="#f9e2af" />
-        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">99</text>
+        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">7</text>
         <text x="15" y="70" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#a6adc8">⭐ Total Stars</text>
       </g>
     
       <g transform="translate(235, 40)" filter="url(#shadow)">
         <rect width="180" height="90" rx="16" fill="#313244" stroke="#45475a" stroke-width="1" />
         <rect width="180" height="4" rx="2" fill="#a6e3a1" />
-        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">99</text>
+        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">1824</text>
         <text x="15" y="70" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#a6adc8">🔥 Total Commits</text>
       </g>
     
       <g transform="translate(430, 40)" filter="url(#shadow)">
         <rect width="180" height="90" rx="16" fill="#313244" stroke="#45475a" stroke-width="1" />
         <rect width="180" height="4" rx="2" fill="#89b4fa" />
-        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">99</text>
+        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">3</text>
         <text x="15" y="70" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#a6adc8">🚀 Pull Requests</text>
       </g>
     
       <g transform="translate(625, 40)" filter="url(#shadow)">
         <rect width="180" height="90" rx="16" fill="#313244" stroke="#45475a" stroke-width="1" />
         <rect width="180" height="4" rx="2" fill="#f38ba8" />
-        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">99</text>
+        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="#cdd6f4">2</text>
         <text x="15" y="70" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="#a6adc8">🎯 Issues</text>
       </g>
     
