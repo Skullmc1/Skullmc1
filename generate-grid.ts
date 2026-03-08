@@ -1,6 +1,6 @@
 import { writeFileSync } from "fs";
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const USERNAME = "Skullmc1";
 
 interface Language {
@@ -422,6 +422,41 @@ function generateRepoCard(repos: Repository[]) {
   writeFileSync("repos.svg", svg);
 }
 
+function generateStack() {
+  const width = 850;
+  const height = 180;
+
+  const stack = [
+    { name: "Rust", color: "#dea584" },
+    { name: "Bun", color: "#f9e2af" },
+    { name: "Tauri", color: "#24c8db" },
+    { name: "Go", color: "#00ADD8" },
+    { name: "TypeScript", color: "#3178c6" },
+    { name: "Next.js", color: "#ffffff" },
+  ];
+
+  let stackHtml = "";
+  stack.forEach((item, i) => {
+    const x = 40 + (i % 3) * 260;
+    const y = 70 + Math.floor(i / 3) * 55;
+    stackHtml += `
+      <g transform="translate(${x}, ${y})">
+        <rect width="240" height="40" rx="12" fill="${theme.cardBg}" stroke="${theme.border}" stroke-width="1" />
+        <circle cx="20" cy="20" r="5" fill="${item.color}" />
+        <text x="35" y="25" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="${theme.text}">${escapeXml(item.name)}</text>
+      </g>
+    `;
+  });
+
+  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
+    ${commonDefs}
+    <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
+    <text x="40" y="45" class="title">Tech Stack</text>
+    ${stackHtml}
+  </svg>`;
+  writeFileSync("stack.svg", svg);
+}
+
 async function run() {
   const data = await getContributions();
   const updatedFiles: string[] = [];
@@ -436,6 +471,7 @@ async function run() {
   generateAndTrack(generateLearning, "learning.svg");
   generateAndTrack(generateActivity, "activity.svg", data.calendar);
   generateAndTrack(generateRepoCard, "repos.svg", data.repos);
+  generateAndTrack(generateStack, "stack.svg");
 
   console.log(`Updated SVGs: ${updatedFiles.join(", ")}`);
   console.log(`Data source: ${data.isMock ? "Fallback (Mock Data)" : "Real Key (GitHub API)"}`);
