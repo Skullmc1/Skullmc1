@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-const USERNAME = "Skullmc1";
+const USERNAME = "Qclid";
 
 interface Language {
   name: string;
@@ -133,347 +133,275 @@ function generateMockData(): UserData {
     },
     repos: [
       {
-        name: "placeholder boi1",
-        description: "bada bing, bada boom",
+        name: "placeholder-repo-1",
+        description: "A high-performance system tool built with Rust.",
         primaryLanguage: { name: "Rust", color: "#dea584" },
         stargazerCount: 128,
       },
       {
-        name: "placeholder boi2",
-        description: "bada bing, bada boom",
+        name: "placeholder-repo-2",
+        description: "Full-stack application with Next.js and TypeScript.",
         primaryLanguage: { name: "TypeScript", color: "#3178c6" },
         stargazerCount: 64,
       },
       {
-        name: "placeholder boi3",
-        description: "bada bing, bada boom",
+        name: "placeholder-repo-3",
+        description: "Cloud-native microservices architecture in Go.",
         primaryLanguage: { name: "Go", color: "#00ADD8" },
         stargazerCount: 42,
       },
       {
-        name: "placeholder boi4",
-        description: "bada bing, bada boom",
-        primaryLanguage: { name: "Vue", color: "#41b883" },
+        name: "placeholder-repo-4",
+        description: "Modern UI component library for React.",
+        primaryLanguage: { name: "React", color: "#61dafb" },
         stargazerCount: 35,
       },
     ],
     stats: {
-      totalContributions: 99,
-      totalStars: 99,
-      totalRepos: 99,
-      totalPRs: 99,
-      totalIssues: 99,
+      totalContributions: 1542,
+      totalStars: 432,
+      totalRepos: 42,
+      totalPRs: 89,
+      totalIssues: 12,
     },
     isMock: true,
   };
 }
 
-// Catppuccin Mocha inspired palette for app-like feel
 const theme = {
-  bg: "#1e1e2e",
-  cardBg: "#313244",
-  text: "#cdd6f4",
-  subtext: "#a6adc8",
-  accent1: "#cba6f7", // Mauve
-  accent2: "#89b4fa", // Blue
-  accent3: "#a6e3a1", // Green
-  accent4: "#f9e2af", // Yellow
-  accent5: "#f38ba8", // Red
-  border: "#45475a",
+  base: "#030712",
+  glass: "rgba(17, 24, 39, 0.7)",
+  border: "rgba(59, 130, 246, 0.3)",
+  accentBlue: "#3b82f6",
+  accentCyan: "#06b6d4",
+  textMain: "#f3f4f6",
+  textDim: "#9ca3af",
+  gridColor: "rgba(59, 130, 246, 0.1)",
 };
-
-const commonDefs = `
-  <defs>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.25"/>
-    </filter>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="8" result="blur" />
-      <feComposite in="SourceGraphic" in2="blur" operator="over" />
-    </filter>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="${theme.accent1}" />
-      <stop offset="100%" stop-color="${theme.accent2}" />
-    </linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="${theme.accent3}" />
-      <stop offset="100%" stop-color="${theme.accent4}" />
-    </linearGradient>
-    <style>
-      .title { font: 700 22px 'Inter', system-ui, sans-serif; fill: ${theme.text}; }
-      .text { font: 400 14px 'Inter', system-ui, sans-serif; fill: ${theme.subtext}; }
-      .bold { font-weight: 600; fill: ${theme.text}; }
-    </style>
-  </defs>
-`;
 
 function escapeXml(unsafe: string) {
   return unsafe.replace(/[<>&"']/g, (c) => {
     switch (c) {
-      case "<":
-        return "&lt;";
-      case ">":
-        return "&gt;";
-      case "&":
-        return "&amp;";
-      case '"':
-        return "&quot;";
-      case "'":
-        return "&apos;";
-      default:
-        return c;
+      case "<": return "&lt;";
+      case ">": return "&gt;";
+      case "&": return "&amp;";
+      case '"': return "&quot;";
+      case "'": return "&apos;";
+      default: return c;
     }
   });
 }
 
-function generateHeader() {
+function generateUnifiedDashboard(data: UserData) {
   const width = 850;
-  const height = 200;
+  const height = 1350;
 
-  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    ${commonDefs}
-    <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
+  const commonDefs = `
+    <defs>
+      <filter id="glassBlur" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+      </filter>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="5" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
+      <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="rgba(59, 130, 246, 0.1)" />
+        <stop offset="100%" stop-color="rgba(59, 130, 246, 0.02)" />
+      </linearGradient>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="${theme.gridColor}" stroke-width="1"/>
+      </pattern>
+      
+      <style>
+        @keyframes scanline {
+          0% { transform: translateY(-100px); opacity: 0; }
+          10% { opacity: 0.5; }
+          90% { opacity: 0.5; }
+          100% { transform: translateY(${height}px); opacity: 0; }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 0.4; }
+          50% { opacity: 1; }
+        }
+        @keyframes flicker {
+          0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; }
+          20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.4; }
+        }
+        @keyframes dataFlow {
+          0% { stroke-dashoffset: 100; }
+          100% { stroke-dashoffset: 0; }
+        }
+        @keyframes shimmer {
+          0% { fill-opacity: 0.3; }
+          50% { fill-opacity: 0.9; }
+          100% { fill-opacity: 0.3; }
+        }
+        .font-mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+        .font-sans { font-family: 'Inter', system-ui, sans-serif; }
+      </style>
+    </defs>
+  `;
 
-    <!-- Decorative background elements -->
-    <circle cx="750" cy="50" r="100" fill="url(#grad1)" opacity="0.15" filter="blur(40px)" />
-    <circle cx="800" cy="180" r="120" fill="url(#grad2)" opacity="0.15" filter="blur(40px)" />
+  // --- Background Grid & Scanline ---
+  let bg = `
+    <rect width="${width}" height="${height}" fill="${theme.base}" rx="24" />
+    <rect width="${width}" height="${height}" fill="url(#grid)" rx="24" />
+    <rect width="${width}" height="100" fill="url(#glassGrad)" style="animation: scanline 8s linear infinite;">
+      <animate attributeName="opacity" values="0;0.5;0" dur="8s" repeatCount="indefinite" />
+    </rect>
+  `;
 
-    <g transform="translate(60, 105)">
-      <text x="0" y="0" font-family="'Inter', system-ui, sans-serif" font-weight="800" font-size="64" fill="${theme.text}" letter-spacing="-2px">${escapeXml(USERNAME)}</text>
-      <text x="4" y="40" font-family="'Inter', system-ui, sans-serif" font-weight="500" font-size="22" fill="${theme.accent2}">Building cool things for the web.</text>
+  const header = `
+    <g transform="translate(60, 80)">
+      <text class="font-sans" font-weight="900" font-size="72" fill="${theme.textMain}" letter-spacing="-3px">${escapeXml(USERNAME)}</text>
+      <text x="5" y="45" class="font-sans" font-weight="500" font-size="20" fill="${theme.accentCyan}" opacity="0.8">always open to collab // building cool things</text>
+      <line x1="0" y1="70" x2="730" y2="70" stroke="${theme.border}" stroke-width="1" stroke-dasharray="4 4" />
     </g>
-  </svg>`;
-  writeFileSync("header.svg", svg);
-}
+  `;
 
-function generateStats(stats: Stats) {
-  const width = 850;
-  const height = 160;
-
-  const statCards = [
-    {
-      label: "Total Stars",
-      value: stats.totalStars,
-      color: theme.accent4,
-      icon: "⭐",
-    },
-    {
-      label: "Total Commits",
-      value: stats.totalContributions,
-      color: theme.accent3,
-      icon: "🔥",
-    },
-    {
-      label: "Pull Requests",
-      value: stats.totalPRs,
-      color: theme.accent2,
-      icon: "🚀",
-    },
-    {
-      label: "Issues",
-      value: stats.totalIssues,
-      color: theme.accent5,
-      icon: "🎯",
-    },
+  // --- Stats Section ---
+  const statItems = [
+    { label: "STARS", val: data.stats.totalStars, icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" },
+    { label: "COMMITS", val: data.stats.totalContributions, icon: "M13 2L3 14h9l-1 8 10-12h-9l1-8z" },
+    { label: "PRs", val: data.stats.totalPRs, icon: "M15 14c.28 0 .5.22.5.5v3.5l4.5-4.5L15.5 9v3.5c0 .28-.22.5-.5.5h-4c-1.1 0-2-.9-2-2V7.5c0-.28.22-.5.5-.5H13V4h-3.5c-1.1 0-2 .9-2 2v2.5c0 1.1.9 2 2 2h4z" },
+    { label: "REPOS", val: data.stats.totalRepos, icon: "M4 4h16v16H4z" }
   ];
 
-  let cardsHtml = "";
-  statCards.forEach((stat, i) => {
-    const x = 40 + i * 195;
-    cardsHtml += `
-      <g transform="translate(${x}, 40)" filter="url(#shadow)">
-        <rect width="180" height="90" rx="16" fill="${theme.cardBg}" stroke="${theme.border}" stroke-width="1" />
-        <rect width="180" height="4" rx="2" fill="${stat.color}" />
-        <text x="15" y="40" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="28" fill="${theme.text}">${stat.value}</text>
-        <text x="15" y="70" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="14" fill="${theme.subtext}">${stat.icon} ${stat.label}</text>
-      </g>
-    `;
-  });
-
-  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    ${commonDefs}
-    <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
-    ${cardsHtml}
-  </svg>`;
-  writeFileSync("stats.svg", svg);
-}
-
-function generateLearning() {
-  const width = 850;
-  const height = 140;
-
-  const learningItems = [
-    { name: "Web Design", color: theme.accent1 },
-    { name: "System Design", color: theme.accent2 },
-    { name: "Rust & Wasm", color: theme.accent4 },
-  ];
-
-  let itemsHtml = "";
-  learningItems.forEach((item, i) => {
-    const delay = i * 0.3;
-    const x = 40 + i * 260;
-    itemsHtml += `
+  let statsHtml = `<g transform="translate(60, 220)">`;
+  statItems.forEach((s, i) => {
+    const x = i * 190;
+    statsHtml += `
       <g transform="translate(${x}, 0)">
-        <rect width="240" height="45" rx="12" fill="${theme.cardBg}" stroke="${item.color}" stroke-opacity="0.4" stroke-width="1.5">
-           <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="3s" begin="${delay}s" repeatCount="indefinite" />
-        </rect>
-        <circle cx="20" cy="22.5" r="5" fill="${item.color}" />
-        <text x="35" y="27" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="15" fill="${theme.text}">${escapeXml(item.name)}</text>
+        <rect width="170" height="100" rx="16" fill="${theme.glass}" stroke="${theme.border}" stroke-width="1" />
+        <text x="20" y="40" class="font-sans" font-weight="600" font-size="12" fill="${theme.accentBlue}" letter-spacing="2px" opacity="0.7">${s.label}</text>
+        <text x="20" y="75" class="font-mono" font-weight="800" font-size="32" fill="${theme.textMain}" style="animation: flicker ${2+i}s infinite;">${s.val}</text>
+        <circle cx="145" cy="25" r="3" fill="${theme.accentCyan}" style="animation: pulse 2s infinite;" />
       </g>
     `;
   });
+  statsHtml += `</g>`;
 
-  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    ${commonDefs}
-    <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
-    <text x="40" y="45" class="title">Currently Learning &amp; Building ⚡</text>
-    <g transform="translate(0, 70)">
-      ${itemsHtml}
-    </g>
-  </svg>`;
-  writeFileSync("learning.svg", svg);
-}
-
-function generateActivity(calendar: ContributionCalendar) {
-  const width = 850;
-  const height = 280;
-  const cellSize = 14;
+  // --- Activity Graph ---
+  const weeks = data.calendar.weeks.slice(-44);
+  const cellSize = 12;
   const gap = 4;
-
-  let gridItems = "";
-  const weeks = calendar.weeks.slice(-44); // Show last 44 weeks to fit the card
-
-  weeks.forEach((week: ContributionWeek, x: number) => {
-    week.contributionDays.forEach((day: ContributionDay, y: number) => {
+  let activityGrid = "";
+  weeks.forEach((week, x) => {
+    week.contributionDays.forEach((day, y) => {
       const count = day.contributionCount;
-      let fill = theme.cardBg;
-      let opacity = 0.5;
-
-      if (count > 0 && count <= 2) {
-        fill = theme.accent2;
-        opacity = 0.4;
-      } // low
-      if (count > 2 && count <= 5) {
-        fill = theme.accent2;
-        opacity = 0.7;
-      } // mid
-      if (count > 5 && count <= 8) {
-        fill = theme.accent1;
-        opacity = 0.8;
-      } // high
-      if (count > 8) {
-        fill = theme.accent5;
-        opacity = 0.9;
-      } // very high
-
-      gridItems += `<rect x="${x * (cellSize + gap)}" y="${y * (cellSize + gap)}" width="${cellSize}" height="${cellSize}" rx="4" fill="${fill}" fill-opacity="${opacity}">
-        <title>${count} contributions on ${day.date}</title>
-      </rect>\n`;
+      let fill = "rgba(59, 130, 246, 0.05)";
+      let shim = "";
+      if (count > 0) {
+        fill = theme.accentBlue;
+        const op = Math.min(0.2 + (count / 10), 0.9);
+        fill = `rgba(59, 130, 246, ${op})`;
+        if (count > 5) shim = `style="animation: shimmer ${2 + Math.random()}s infinite"`;
+      }
+      activityGrid += `<rect x="${x * (cellSize + gap)}" y="${y * (cellSize + gap)}" width="${cellSize}" height="${cellSize}" rx="2" fill="${fill}" ${shim} />`;
     });
   });
 
-  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    ${commonDefs}
-    <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
-    <text x="40" y="45" class="title">Activity Graph</text>
-    <g transform="translate(40, 70)">
-      ${gridItems}
-    </g>
-  </svg>`;
-  writeFileSync("activity.svg", svg);
-}
-
-function generateRepoCard(repos: Repository[]) {
-  const width = 850;
-  const height = 360;
-
-  let repoItems = "";
-  repos.slice(0, 4).forEach((repo, i) => {
-    const x = (i % 2) * 390;
-    const y = Math.floor(i / 2) * 130;
-
-    let desc = repo.description || "No description provided";
-    if (desc.length > 45) desc = desc.substring(0, 42) + "...";
-
-    repoItems += `
-    <g transform="translate(${x}, ${y})" filter="url(#shadow)">
-      <rect width="370" height="110" rx="16" fill="${theme.cardBg}" stroke="${theme.border}" stroke-width="1" />
-      <text x="20" y="35" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="18" fill="${theme.text}">${escapeXml(repo.name)}</text>
-      <text x="20" y="60" font-family="Inter, system-ui, sans-serif" font-size="13" fill="${theme.subtext}" width="330">${escapeXml(desc)}</text>
-
-      <g transform="translate(20, 85)">
-        <circle cx="6" cy="-4" r="6" fill="${repo.primaryLanguage?.color || theme.subtext}" />
-        <text x="18" y="0" font-family="Inter, system-ui, sans-serif" font-weight="500" font-size="12" fill="${theme.subtext}">${escapeXml(repo.primaryLanguage?.name || "Unknown")}</text>
+  const activityHtml = `
+    <g transform="translate(60, 380)">
+      <rect width="730" height="200" rx="20" fill="${theme.glass}" stroke="${theme.border}" stroke-width="1" />
+      <text x="25" y="35" class="font-sans" font-weight="700" font-size="18" fill="${theme.textMain}">My Activity</text>
+      <g transform="translate(15, 65)">
+        ${activityGrid}
       </g>
-      <g transform="translate(300, 85)">
-        <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="13" fill="${theme.accent4}">⭐ ${repo.stargazerCount}</text>
-      </g>
-    </g>`;
-  });
-
-  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    ${commonDefs}
-    <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
-    <text x="40" y="45" class="title">Top Projects</text>
-    <g transform="translate(40, 70)">
-      ${repoItems}
     </g>
-  </svg>`;
-  writeFileSync("repos.svg", svg);
-}
+  `;
 
-function generateStack() {
-  const width = 850;
-  const height = 180;
+  // --- Top Projects ---
+  let reposHtml = `<g transform="translate(60, 640)">
+    <text x="0" y="0" class="font-sans" font-weight="700" font-size="18" fill="${theme.textMain}">Top Works</text>
+  `;
+  data.repos.slice(0, 4).forEach((repo, i) => {
+    const x = (i % 2) * 375;
+    const y = 30 + Math.floor(i / 2) * 150;
+    let desc = repo.description || "No system documentation.";
+    if (desc.length > 60) desc = desc.substring(0, 57) + "...";
 
-  const stack = [
-    { name: "Rust", color: "#dea584" },
-    { name: "Bun", color: "#f9e2af" },
-    { name: "Tauri", color: "#24c8db" },
-    { name: "Go", color: "#00ADD8" },
-    { name: "TypeScript", color: "#3178c6" },
-    { name: "Next.js", color: "#ffffff" },
-  ];
-
-  let stackHtml = "";
-  stack.forEach((item, i) => {
-    const x = 40 + (i % 3) * 260;
-    const y = 70 + Math.floor(i / 3) * 55;
-    stackHtml += `
+    reposHtml += `
       <g transform="translate(${x}, ${y})">
-        <rect width="240" height="40" rx="12" fill="${theme.cardBg}" stroke="${theme.border}" stroke-width="1" />
-        <circle cx="20" cy="20" r="5" fill="${item.color}" />
-        <text x="35" y="25" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="14" fill="${theme.text}">${escapeXml(item.name)}</text>
+        <rect width="355" height="130" rx="20" fill="${theme.glass}" stroke="${theme.border}" stroke-width="1" />
+        <text x="20" y="35" class="font-mono" font-weight="700" font-size="16" fill="${theme.textMain}">${escapeXml(repo.name)}</text>
+        <text x="20" y="65" class="font-sans" font-size="13" fill="${theme.textDim}" width="310">${escapeXml(desc)}</text>
+        <g transform="translate(20, 100)">
+          <circle cx="6" cy="-4" r="5" fill="${repo.primaryLanguage?.color || theme.accentBlue}" filter="url(#glow)" />
+          <text x="18" y="0" class="font-sans" font-size="12" fill="${theme.textDim}">${escapeXml(repo.primaryLanguage?.name || "Unknown")}</text>
+          <text x="280" y="0" class="font-mono" font-size="12" fill="${theme.accentCyan}">★ ${repo.stargazerCount}</text>
+        </g>
       </g>
     `;
   });
+  reposHtml += `</g>`;
 
-  const svg = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-    ${commonDefs}
-    <rect width="${width}" height="${height}" rx="20" fill="${theme.bg}" stroke="${theme.border}" stroke-width="1.5" />
-    <text x="40" y="45" class="title">Tech Stack</text>
-    ${stackHtml}
-  </svg>`;
-  writeFileSync("stack.svg", svg);
+  // --- Tech Stack ---
+  const stack = [
+    { name: "RUST", color: "#dea584" }, { name: "BUN", color: "#f9e2af" },
+    { name: "TAURI", color: "#24c8db" }, { name: "GO", color: "#00ADD8" },
+    { name: "TYPESCRIPT", color: "#3178c6" }, { name: "NEXT.JS", color: "#ffffff" }
+  ];
+
+  let stackHtml = `<g transform="translate(60, 1000)">
+    <text x="0" y="0" class="font-sans" font-weight="700" font-size="18" fill="${theme.textMain}">My Best Tools</text>
+    <g transform="translate(0, 30)">
+  `;
+  stack.forEach((item, i) => {
+    const x = (i % 3) * 250;
+    const y = Math.floor(i / 3) * 70;
+    stackHtml += `
+      <g transform="translate(${x}, ${y})">
+        <rect width="230" height="50" rx="12" fill="${theme.glass}" stroke="${theme.border}" stroke-width="1" />
+        <circle cx="25" cy="25" r="8" fill="none" stroke="${item.color}" stroke-width="1.5" stroke-dasharray="10 5" opacity="0.6">
+          <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="25" cy="25" r="3" fill="${item.color}" filter="url(#glow)" />
+        <text x="45" y="30" class="font-mono" font-weight="700" font-size="13" fill="${theme.textMain}" letter-spacing="1px">${item.name}</text>
+      </g>
+    `;
+  });
+  stackHtml += `</g></g>`;
+
+  // --- Circuitry Lines ---
+  const circuitry = `
+    <g opacity="0.2" stroke="${theme.accentBlue}" stroke-width="1" fill="none">
+      <path d="M 790 150 L 790 1200 L 750 1200" stroke-dasharray="5 5" style="animation: dataFlow 10s linear infinite;" />
+      <path d="M 60 1200 L 20 1200 L 20 150" stroke-dasharray="5 5" style="animation: dataFlow 10s linear reverse infinite;" />
+    </g>
+  `;
+
+  // --- Footer ---
+  const footer = `
+    <g transform="translate(60, 1250)">
+      <text class="font-mono" font-size="14" fill="${theme.textMain}" opacity="0.7">Discord: v_late</text>
+      <text x="180" y="0" class="font-mono" font-size="14" fill="${theme.textMain}" opacity="0.7">Insta: jk_nan_</text>
+      <text x="480" y="0" class="font-mono" font-size="12" fill="${theme.accentCyan}" opacity="0.6">Let's build something together.</text>
+    </g>
+  `;
+
+  const svg = `
+    <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+      ${commonDefs}
+      ${bg}
+      ${circuitry}
+      ${header}
+      ${statsHtml}
+      ${activityHtml}
+      ${reposHtml}
+      ${stackHtml}
+      ${footer}
+    </svg>
+  `;
+
+  writeFileSync("dashboard.svg", svg);
 }
 
 async function run() {
   const data = await getContributions();
-  const updatedFiles: string[] = [];
-
-  const generateAndTrack = (fn: Function, fileName: string, ...args: any[]) => {
-    fn(...args);
-    updatedFiles.push(fileName);
-  };
-
-  generateAndTrack(generateHeader, "header.svg");
-  generateAndTrack(generateStats, "stats.svg", data.stats);
-  generateAndTrack(generateLearning, "learning.svg");
-  generateAndTrack(generateActivity, "activity.svg", data.calendar);
-  generateAndTrack(generateRepoCard, "repos.svg", data.repos);
-  generateAndTrack(generateStack, "stack.svg");
-
-  console.log(`Updated SVGs: ${updatedFiles.join(", ")}`);
+  generateUnifiedDashboard(data);
+  console.log("Updated SVGs: dashboard.svg");
   console.log(`Data source: ${data.isMock ? "Fallback (Mock Data)" : "Real Key (GitHub API)"}`);
 }
 
