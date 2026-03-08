@@ -1,198 +1,10 @@
 import { writeFileSync } from "fs";
+import { UserData } from "./types";
+import { theme, escapeXml } from "./theme";
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
 const USERNAME = "Qclid";
 
-interface Language {
-  name: string;
-  color: string;
-}
-
-interface Repository {
-  name: string;
-  description: string | null;
-  primaryLanguage: Language | null;
-  stargazerCount: number;
-}
-
-interface ContributionDay {
-  contributionCount: number;
-  date: string;
-}
-
-interface ContributionWeek {
-  contributionDays: ContributionDay[];
-}
-
-interface ContributionCalendar {
-  totalContributions: number;
-  weeks: ContributionWeek[];
-}
-
-interface Stats {
-  totalContributions: number;
-  totalStars: number;
-  totalRepos: number;
-  totalPRs: number;
-  totalIssues: number;
-}
-
-interface UserData {
-  calendar: ContributionCalendar;
-  repos: Repository[];
-  stats: Stats;
-  isMock: boolean;
-}
-
-async function getContributions(): Promise<UserData> {
-  const query = `
-    query($userName:String!) {
-      user(login: $userName) {
-        contributionsCollection {
-          contributionCalendar {
-            totalContributions
-            weeks {
-              contributionDays {
-                contributionCount
-                date
-              }
-            }
-          }
-        }
-        repositories(first: 100, orderBy: {field: STARGAZERS, direction: DESC}) {
-          totalCount
-          nodes {
-            name
-            description
-            primaryLanguage { name color }
-            stargazerCount
-          }
-        }
-        pullRequests { totalCount }
-        issues { totalCount }
-      }
-    }
-  `;
-
-  if (!GITHUB_TOKEN) {
-    console.warn("No GITHUB_TOKEN found, using mock data.");
-    return generateMockData();
-  }
-
-  try {
-    const response = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query, variables: { userName: USERNAME } }),
-    });
-    const data = await response.json();
-    if (data.errors) {
-      console.error("GitHub API errors:", JSON.stringify(data.errors, null, 2));
-      return generateMockData();
-    }
-
-    const user = data.data.user;
-    const repos: Repository[] = user.repositories.nodes;
-    const totalStars = repos.reduce(
-      (acc: number, repo: Repository) => acc + repo.stargazerCount,
-      0,
-    );
-
-    return {
-      calendar: user.contributionsCollection.contributionCalendar,
-      repos: repos,
-      stats: {
-        totalContributions:
-          user.contributionsCollection.contributionCalendar.totalContributions,
-        totalStars,
-        totalRepos: user.repositories.totalCount,
-        totalPRs: user.pullRequests.totalCount,
-        totalIssues: user.issues.totalCount,
-      },
-      isMock: false,
-    };
-  } catch (e) {
-    console.error("Error fetching data from GitHub:", e);
-    return generateMockData();
-  }
-}
-
-function generateMockData(): UserData {
-  return {
-    calendar: {
-      totalContributions: 1337,
-      weeks: Array.from({ length: 52 }, () => ({
-        contributionDays: Array.from({ length: 7 }, (v, i) => ({
-          contributionCount: Math.floor(Math.random() * 8),
-          date: `2024-01-0${i + 1}`,
-        })),
-      })),
-    },
-    repos: [
-      {
-        name: "placeholder-repo-1",
-        description: "A high-performance system tool built with Rust.",
-        primaryLanguage: { name: "Rust", color: "#dea584" },
-        stargazerCount: 128,
-      },
-      {
-        name: "placeholder-repo-2",
-        description: "Full-stack application with Next.js and TypeScript.",
-        primaryLanguage: { name: "TypeScript", color: "#3178c6" },
-        stargazerCount: 64,
-      },
-      {
-        name: "placeholder-repo-3",
-        description: "Cloud-native microservices architecture in Go.",
-        primaryLanguage: { name: "Go", color: "#00ADD8" },
-        stargazerCount: 42,
-      },
-      {
-        name: "placeholder-repo-4",
-        description: "Modern UI component library for React.",
-        primaryLanguage: { name: "React", color: "#61dafb" },
-        stargazerCount: 35,
-      },
-    ],
-    stats: {
-      totalContributions: 1542,
-      totalStars: 432,
-      totalRepos: 42,
-      totalPRs: 89,
-      totalIssues: 12,
-    },
-    isMock: true,
-  };
-}
-
-const theme = {
-  base: "#030712",
-  glass: "rgba(17, 24, 39, 0.7)",
-  border: "rgba(59, 130, 246, 0.3)",
-  accentBlue: "#3b82f6",
-  accentCyan: "#06b6d4",
-  textMain: "#f3f4f6",
-  textDim: "#9ca3af",
-  gridColor: "rgba(59, 130, 246, 0.1)",
-};
-
-function escapeXml(unsafe: string) {
-  return unsafe.replace(/[<>&"']/g, (c) => {
-    switch (c) {
-      case "<": return "&lt;";
-      case ">": return "&gt;";
-      case "&": return "&amp;";
-      case '"': return "&quot;";
-      case "'": return "&apos;";
-      default: return c;
-    }
-  });
-}
-
-function generateUnifiedDashboard(data: UserData) {
+export function generateUnifiedDashboard(data: UserData) {
   const width = 850;
   const height = 1350;
 
@@ -252,6 +64,7 @@ function generateUnifiedDashboard(data: UserData) {
     </rect>
   `;
 
+  // --- Header ---
   const header = `
     <g transform="translate(60, 80)">
       <text class="font-sans" font-weight="900" font-size="72" fill="${theme.textMain}" letter-spacing="-3px">${escapeXml(USERNAME)}</text>
@@ -262,10 +75,10 @@ function generateUnifiedDashboard(data: UserData) {
 
   // --- Stats Section ---
   const statItems = [
-    { label: "STARS", val: data.stats.totalStars, icon: "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" },
-    { label: "COMMITS", val: data.stats.totalContributions, icon: "M13 2L3 14h9l-1 8 10-12h-9l1-8z" },
-    { label: "PRs", val: data.stats.totalPRs, icon: "M15 14c.28 0 .5.22.5.5v3.5l4.5-4.5L15.5 9v3.5c0 .28-.22.5-.5.5h-4c-1.1 0-2-.9-2-2V7.5c0-.28.22-.5.5-.5H13V4h-3.5c-1.1 0-2 .9-2 2v2.5c0 1.1.9 2 2 2h4z" },
-    { label: "REPOS", val: data.stats.totalRepos, icon: "M4 4h16v16H4z" }
+    { label: "STARS", val: data.stats.totalStars },
+    { label: "COMMITS", val: data.stats.totalContributions },
+    { label: "PRs", val: data.stats.totalPRs },
+    { label: "REPOS", val: data.stats.totalRepos }
   ];
 
   let statsHtml = `<g transform="translate(60, 220)">`;
@@ -397,12 +210,3 @@ function generateUnifiedDashboard(data: UserData) {
 
   writeFileSync("dashboard.svg", svg);
 }
-
-async function run() {
-  const data = await getContributions();
-  generateUnifiedDashboard(data);
-  console.log("Updated SVGs: dashboard.svg");
-  console.log(`Data source: ${data.isMock ? "Fallback (Mock Data)" : "Real Key (GitHub API)"}`);
-}
-
-run();
