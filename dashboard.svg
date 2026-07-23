@@ -59,7 +59,7 @@
         <rect width="175" height="85" fill="#141414" stroke="#262626" stroke-width="1" rx="0" />
         <rect width="175" height="2" fill="#ff5500" rx="0" />
         <text x="16" y="30" class="font-sans" font-weight="600" font-size="10" fill="#888888" letter-spacing="1px">REPOSITORIES</text>
-        <text x="16" y="62" class="font-mono" font-weight="700" font-size="26" fill="#ffffff">47</text>
+        <text x="16" y="62" class="font-mono" font-weight="700" font-size="26" fill="#ffffff">48</text>
       </g>
     </g>
       
