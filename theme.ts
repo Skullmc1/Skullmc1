@@ -1,12 +1,13 @@
 export const theme = {
-  base: "#030712",
-  glass: "rgba(17, 24, 39, 0.7)",
-  border: "rgba(59, 130, 246, 0.3)",
-  accentBlue: "#3b82f6",
-  accentCyan: "#06b6d4",
-  textMain: "#f3f4f6",
-  textDim: "#9ca3af",
-  gridColor: "rgba(59, 130, 246, 0.1)",
+  base: "#0a0a0a",
+  cardBg: "#141414",
+  border: "#262626",
+  borderOrange: "#ff5500",
+  accentOrange: "#ff5500",
+  accentOrangeSoft: "rgba(255, 85, 0, 0.12)",
+  textMain: "#ffffff",
+  textDim: "#888888",
+  textMuted: "#555555",
 };
 
 export function escapeXml(unsafe: string) {
